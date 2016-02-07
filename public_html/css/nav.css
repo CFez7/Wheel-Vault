@@ -1,0 +1,31 @@
+/* NAV STYLE SHEET - NAV STYLE SHEET - NAV STYLE SHEET - NAV STYLE SHEET - NAV STYLE SHEET - NAV STYLE SHEET - NAV STYLE SHEET */
+
+.mainnav {
+    height: 65px;
+    max-width: 100%;
+    min-width: 100%;
+    position: absolute;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.mainnav ul {
+    list-style-type: none;
+    position: absolute;
+}
+
+.mainnav ul li {
+        padding: 0 8px; 
+        text-align: center;
+        display: inline;
+        font-family: 'Alegreya Sans', serif;
+        text-decoration: none;
+        font-size: 18px;
+}
+
+.mainnav ul li a:link {
+    color: white;   
+}
+
+.mainnav ul li a:visited {
+    color: white;
+}

@@ -1,0 +1,110 @@
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    top: 13px;
+    right: 25px;
+    border-radius: 4px;    
+    }
+
+nav #login-trigger {
+    background-color: dodgerblue;
+    background-image: linear-gradient(top, #e97171, #d14545);
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 4px;
+    text-shadow: 0 1px 0 rgba(0,0,0,.5);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;    
+    border: 1px solid white;
+    padding: 5px;
+    width: 100px;
+    text-decoration: none; 
+    cursor: pointer;
+    font: bold 14px 'Josefin Slab', sans-serif;
+    color: #fff;
+    position: relative;
+    top: 8px;
+    }
+ 
+fieldset {
+    border: none;   
+}
+
+.forgotpass {
+    color:black;
+    cursor:pointer;
+    font-size:14px;
+}
+
+.forgotpass:hover {
+    color: red;   
+}
+
+nav #login-content {
+    display: none;
+    position: absolute;
+    top: 52px;
+    right: 0;
+    z-index: 999;    
+    background: #fff;
+    background-image: linear-gradient(top, #fff, #eee);  
+    box-shadow: 0 3px 3px -2px rgba(0,0,0,.9);
+    width: 250px; 
+    text-align: center;
+    }
+
+    /*--------------------*/
+
+#inputs {
+    background: #f1f1f1;
+    padding: 6px 5px;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 1px #ccc inset;
+    margin: auto;
+    }
+
+#inputs input:focus {
+    background-color: #fff;
+    border-color: white;
+    outline: none;
+    box-shadow: 0 0 0 1px white inset;
+    }
+
+    /*--------------------*/
+
+#login #submit {    
+    background-color: dodgerblue;
+    background-image: linear-gradient(top, white, #d14545);
+    text-shadow: 0 1px 0 rgba(0,0,0,.5);
+    border: none;
+    height: 30px;
+    padding: 0;
+    margin: auto;
+    width: 250px;
+    cursor: pointer;
+    font: bold 14px Arial, Helvetica;
+    color: #fff;
+    } 
+
+#login #submit:active {    
+    outline: none;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;   
+    }
+
+#login #submit::-moz-focus-inner {
+    border: none;
+    }
+
+#login label {
+    line-height: 24px;
+    font-family: sans-serif;
+    clear: both;
+    width: 50%;
+    }
+
+#login label input {
+    position: relative;
+    top: 2px;
+    right: 2px;
+    }

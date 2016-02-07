@@ -1,0 +1,112 @@
+@media screen and (min-width: 903px) {
+    #box {
+        width: 47%;
+        background-color: rgba(0,0,0,0.9);
+        border-radius: 4px;
+        padding: 10px;
+        padding-top: 40px;
+        margin-bottom: 10px;
+        font-family: 'Alegreya Sans', serif;
+        overflow: hidden;
+        display: inline-block;
+        text-align: left;
+    }
+    
+    #advertbox {
+        width: 47%;
+        min-height: 298px;
+        background-color: rgba(0,0,0,0.9);
+        padding: 10px;
+        padding-top: 40px;
+        border-radius: 4px;
+        margin-bottom: 10px;
+        overflow: hidden;
+        text-align: center;
+        display: inline-block;
+        position: relative;
+        top: -20px;
+    }
+
+    #box-info {
+        max-width: 250px;
+        display: inline-block;
+        position: relative;
+        top: -25px;
+        height: 150px;
+    }
+    
+    #box-description {
+        height: 150px;
+        margin-top: 15px;
+    }
+
+    #price {
+        max-width: 200px;
+        display: inline-block;
+        position: relative;
+        top: -15px;
+        margin: 0px;
+    }
+    
+    #view {
+        position: relative;
+        left: 100px;
+        top: -37px;
+        width: 100px;
+        height: 30px;
+        cursor: pointer;
+        border-radius: 10px;
+        border: solid 2px rgba(255,255,255,0.8);
+        background-color: black;
+        color: white;
+        font-weight: bold;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 902px) {
+    #box {
+        width: 400px;
+        background-color: rgba(0,0,0,0.9);
+        border-radius: 4px;
+        padding: 10px;
+        padding-top: 40px;
+        margin-bottom: 10px;
+        font-family: 'Alegreya Sans', serif;
+        overflow: hidden;
+        text-align: left;
+        position: relative;
+        left: 50%;
+        margin-left: -200px;
+    }
+
+    #box-info {
+        max-width: 190px;
+        display: inline-block;
+        position: relative;
+        margin-top: -25px;
+        max-height: 150px;
+    }
+
+    #price {
+        max-width: 200px;
+        display: inline-block;
+        position: relative;
+        margin: 0px;
+    }
+    
+    #view {
+        position: relative;
+        left: 80px;
+        top: -33px;
+        width: 100px;
+        height: 30px;
+        cursor: pointer;
+        border-radius: 10px;
+        border: solid 2px rgba(255,255,255,0.8);
+        background-color: black;
+        color: white;
+        font-weight: bold;
+        font-size: 16px;
+    }
+}
