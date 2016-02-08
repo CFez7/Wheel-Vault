@@ -12,6 +12,10 @@
         text-align: left;
     }
     
+    #box h1 {
+        font-family: 'Candal', sans-serif;
+    }
+    
     #advertbox {
         width: 47%;
         min-height: 298px;
@@ -46,6 +50,10 @@
         position: relative;
         top: -15px;
         margin: 0px;
+    }
+    
+    #price h1 {
+        font-family: 'Alegreya Sans', sans-serif;
     }
     
     #view {

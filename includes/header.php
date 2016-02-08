@@ -15,6 +15,7 @@
         <link href='css/nav.css' rel='stylesheet' type='text/css'>
         <link href='css/login-nav.css' rel='stylesheet' type='text/css'>
         <link href='css/uploadcheckers.css' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Candal' rel='stylesheet' type='text/css'>
         <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
         <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
