@@ -2,7 +2,7 @@
     require_once("../../includes/session.php");
     require_once("../../includes/connect.php");
 ?>
-<?php 
+<?php
     
     if(isset($_POST["addpost"])) {
         $title = $_POST["title"];
@@ -17,6 +17,7 @@
         $description = $_POST["description"];
         $price = $_POST["price"];
         $ownerID = $_SESSION["userID"];
+        $listingID = "";
     } else {
         $title = "";
         $frontwidth = "";
@@ -30,6 +31,7 @@
         $description = "";
         $price = ""; 
         $ownerID = "";
+        $listingID = "";
     }
 
     if($_POST['ownerPhone'] == 'true') {
@@ -78,10 +80,12 @@
                 $_SESSION['uploadMessage'] = "Price field empty!";
                 header("Location: ../addpost.php");
             } else {
+            
+            ///// IMAGE 1 /////
         
     if(isset($_FILES['photo'])){
           $errors = array();
-          $file_name = $_FILES['photo']['name'];
+          $file_name = $ownerID."-".$title."-1";
           $file_size =$_FILES['photo']['size'];
           $file_tmp =$_FILES['photo']['tmp_name'];
           $file_type=$_FILES['photo']['type'];
@@ -102,14 +106,82 @@
           if(empty($errors)==true){
              move_uploaded_file($file_tmp,"../images/listings/".$file_name);
               
+              /////// IMAGE 2 ///////
+              
+              $file_name2 = $ownerID."-".$title."-2";
+              $file_size2 =$_FILES['photo2']['size'];
+              $file_tmp2 =$_FILES['photo2']['tmp_name'];
+              $file_type2 =$_FILES['photo2']['type'];
+              $file_ext2 =strtolower(end(explode('.',$_FILES['photo2']['name'])));
+
+              $extensions2 = array("jpeg","jpg","png");
+
+              if($file_size > 2097152){
+                 $_SESSION["uploadMessage"] ='File 2 size must be smaller than 2 MB';
+                 header("Location: ../addpost.php");
+              }
+
+                move_uploaded_file($file_tmp2,"../images/listings/".$file_name2);
+              
+               /////// IMAGE 3 ///////
+              
+              $file_name3 = $ownerID."-".$title."-3";
+              $file_size3 =$_FILES['photo3']['size'];
+              $file_tmp3 =$_FILES['photo3']['tmp_name'];
+              $file_type3 =$_FILES['photo3']['type'];
+              $file_ext3 =strtolower(end(explode('.',$_FILES['photo3']['name'])));
+
+              $extensions3 = array("jpeg","jpg","png");
+
+              if($file_size > 2097152){
+                 $_SESSION["uploadMessage"] ='File 2 size must be smaller than 2 MB';
+                 header("Location: ../addpost.php");
+              }
+
+                move_uploaded_file($file_tmp3,"../images/listings/".$file_name3);
+              
+              /////// IMAGE 4 ///////
+              
+              $file_name4 = $ownerID."-".$title."-4";
+              $file_size4 =$_FILES['photo4']['size'];
+              $file_tmp4 =$_FILES['photo4']['tmp_name'];
+              $file_type4 =$_FILES['photo4']['type'];
+              $file_ext4 =strtolower(end(explode('.',$_FILES['photo4']['name'])));
+
+              $extensions4 = array("jpeg","jpg","png");
+
+              if($file_size > 2097152){
+                 $_SESSION["uploadMessage"] ='File 2 size must be smaller than 2 MB';
+                 header("Location: ../addpost.php");
+              }
+
+                move_uploaded_file($file_tmp4,"../images/listings/".$file_name4);
+              
+              /////// IMAGE 3 ///////
+              
+              $file_name5 = $ownerID."-".$title."-5";
+              $file_size5 =$_FILES['photo5']['size'];
+              $file_tmp5 =$_FILES['photo5']['tmp_name'];
+              $file_type5 =$_FILES['photo5']['type'];
+              $file_ext5 =strtolower(end(explode('.',$_FILES['photo5']['name'])));
+
+              $extensions5 = array("jpeg","jpg","png");
+
+              if($file_size > 2097152){
+                 $_SESSION["uploadMessage"] ='File 2 size must be smaller than 2 MB';
+                 header("Location: ../addpost.php");
+              }
+
+                move_uploaded_file($file_tmp5,"../images/listings/".$file_name5);
+              
               ////////////////////////
               
               $mainImage = $file_name;
               
-              $thumb1 = "default";
-              $thumb2 = "default";
-              $thumb3 = "default";
-              $thumb4 = "default";
+              $thumb1 = $file_name2;
+              $thumb2 = $file_name3;
+              $thumb3 = $file_name4;
+              $thumb4 = $file_name5;
               
              $query = "INSERT INTO listings (title, frontwidth, rearwidth, size, brand, studpattern1, studpattern2, frontoffset, rearoffset, description, price, ownerID, ownerPhone, ownerEmail, ownerLocation, swaps, mainImage, thumb1, thumb2, thumb3, thumb4) VALUES ('{$title}', '{$frontwidth}', '{$rearwidth}', '{$size}', '{$brand}', '{$studpattern1}', '{$studpattern2}', '{$frontoffset}', '{$rearoffset}', '{$description}', '{$price}', '{$ownerID}', '{$ownerPhone}', '{$ownerEmail}', '{$ownerLocation}', '{$swaps}', '{$mainImage}', '{$thumb1}', '{$thumb2}', '{$thumb3}', '{$thumb4}')";
         
@@ -121,6 +193,7 @@
               }else{
                   $_SESSION["uploadMessage"] = "Error!";
                   header("Location: ../addpost.php");
+           }
           }
          }
         }
@@ -129,8 +202,6 @@
      }
     }
    }
-  }
- 
 ?>
 <?php 
     if(isset($_POST["addpost"])) {

@@ -37,3 +37,8 @@
            header("Location: ../account.php");
        }
 ?>
+<?php 
+    if(isset($_POST["addpost"])) {
+        mysqli_close($connection);
+    }
+?>

@@ -140,25 +140,25 @@
                             <p style="text-align:right"><font style="color:red">*</font>Image Upload:</p>
                         </td>
                         <td colspan="2">
-                            <input type="file" name="photo" id="file" size="5" style="margin:10px;color:transparent">
+                            <input type="file" name="photo" size="5" style="margin:10px;color:transparent">
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <p style="text-align:center">Image 2:</p>
-                            <input type="file" name="photo2" id="file" style="margin:0px;margin-left:35px; width:100%; color:transparent">
+                            <input type="file" name="photo2" style="margin:0px;margin-left:35px; width:100%; color:transparent">
                         </td>
                         <td>
                             <p style="text-align:center">Image 3:</p>
-                            <input type="file" name="photo3" id="file" style="margin:0px;margin-left:35px; width:100%; color:transparent">
+                            <input type="file" name="photo3" style="margin:0px;margin-left:35px; width:100%; color:transparent">
                         </td>
                         <td>
                             <p style="text-align:center">Image 4:</p>
-                            <input type="file" name="photo4" id="file" style="margin:0px;margin-left:35px; width:100%; color:transparent">
+                            <input type="file" name="photo4" style="margin:0px;margin-left:35px; width:100%; color:transparent">
                         </td>
                         <td>
                             <p style="text-align:center">Image 5:</p>
-                            <input type="file" name="photo5" id="file" style="margin:0px;margin-left:35px; width:75%; color:transparent">
+                            <input type="file" name="photo5" style="margin:0px;margin-left:35px; width:75%; color:transparent">
                         </td>
                     </tr>
                     <br><br>
