@@ -89,7 +89,7 @@
 
           $extensions= array("jpeg","jpg","png");
 
-          if(in_array($file_ext,$extensions)=== false){
+          if(in_array($file_ext,$extensions)=== false) {
              $_SESSION["uploadMessage"] ="extension not allowed, please choose a JPEG or PNG file.";
              header("Location: ../addpost.php");
           }
@@ -106,10 +106,10 @@
               
               $mainImage = $file_name;
               
-              $thumb1 = "";
-              $thumb2 = "";
-              $thumb3 = "";
-              $thumb4 = "";
+              $thumb1 = "default";
+              $thumb2 = "default";
+              $thumb3 = "default";
+              $thumb4 = "default";
               
              $query = "INSERT INTO listings (title, frontwidth, rearwidth, size, brand, studpattern1, studpattern2, frontoffset, rearoffset, description, price, ownerID, ownerPhone, ownerEmail, ownerLocation, swaps, mainImage, thumb1, thumb2, thumb3, thumb4) VALUES ('{$title}', '{$frontwidth}', '{$rearwidth}', '{$size}', '{$brand}', '{$studpattern1}', '{$studpattern2}', '{$frontoffset}', '{$rearoffset}', '{$description}', '{$price}', '{$ownerID}', '{$ownerPhone}', '{$ownerEmail}', '{$ownerLocation}', '{$swaps}', '{$mainImage}', '{$thumb1}', '{$thumb2}', '{$thumb3}', '{$thumb4}')";
         

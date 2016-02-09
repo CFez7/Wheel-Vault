@@ -1,7 +1,7 @@
 <!-- styling template for the listing box for each listing to conform to -->
 <!-- includes database $row data automatically -->
 <div id="box">
-    <h1 style="margin:0px 0px 10px 15px; position:relative; top:-25px;text-align:center"><?php echo ucwords($row["title"]); ?></h1>
+    <h1 style="margin:0px 0px 10px 15px; position:relative; top:-35px;text-align:center"><?php echo ucwords($row["title"]); ?></h1>
         <p style="margin:auto;text-align:center;position:relative;top:-35px; width:400px">
             <?php echo ucfirst($row["size"]);?>" 
             <font color="red">|</font> <?php echo ucfirst($row["brand"]); ?> 
