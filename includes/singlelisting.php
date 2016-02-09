@@ -47,7 +47,7 @@
         
         <?php if($row['ownerPhone'] != "") { ?>
         <div id="phone">
-            <p>0<?php echo ucfirst($row["ownerPhone"]); ?></p>
+            <p><?php echo ucfirst($row["ownerPhone"]); ?></p>
         </div>
         <?php } ?>
         
