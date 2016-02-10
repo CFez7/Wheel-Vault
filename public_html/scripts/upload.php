@@ -116,7 +116,7 @@
 
               $extensions2 = array("jpeg","jpg","png");
 
-              if($file_size > 2097152){
+              if($file_size2 > 2097152){
                  $_SESSION["uploadMessage"] ='File 2 size must be smaller than 2 MB';
                  header("Location: ../addpost.php");
               }
@@ -133,8 +133,8 @@
 
               $extensions3 = array("jpeg","jpg","png");
 
-              if($file_size > 2097152){
-                 $_SESSION["uploadMessage"] ='File 2 size must be smaller than 2 MB';
+              if($file_size3 > 2097152){
+                 $_SESSION["uploadMessage"] ='File 3 size must be smaller than 2 MB';
                  header("Location: ../addpost.php");
               }
 
@@ -150,14 +150,14 @@
 
               $extensions4 = array("jpeg","jpg","png");
 
-              if($file_size > 2097152){
-                 $_SESSION["uploadMessage"] ='File 2 size must be smaller than 2 MB';
+              if($file_size4 > 2097152){
+                 $_SESSION["uploadMessage"] ='File 4 size must be smaller than 2 MB';
                  header("Location: ../addpost.php");
               }
 
                 move_uploaded_file($file_tmp4,"../images/listings/".$file_name4);
               
-              /////// IMAGE 3 ///////
+              /////// IMAGE 5 ///////
               
               $file_name5 = $ownerID."-".$title."-5";
               $file_size5 =$_FILES['photo5']['size'];
@@ -167,8 +167,8 @@
 
               $extensions5 = array("jpeg","jpg","png");
 
-              if($file_size > 2097152){
-                 $_SESSION["uploadMessage"] ='File 2 size must be smaller than 2 MB';
+              if($file_size5 > 2097152){
+                 $_SESSION["uploadMessage"] ='File 5 size must be smaller than 2 MB';
                  header("Location: ../addpost.php");
               }
 
@@ -178,10 +178,26 @@
               
               $mainImage = $file_name;
               
-              $thumb1 = $file_name2;
-              $thumb2 = $file_name3;
-              $thumb3 = $file_name4;
-              $thumb4 = $file_name5;
+              if($file_size2 > 0){
+                $thumb1 = $file_name2;
+              } else {
+                $thumb1 = "default";
+              }
+              if($file_size3 > 0){
+                $thumb2 = $file_name3;
+              } else {
+                $thumb2 = "default";
+              }
+              if($file_size4 > 0){
+                $thumb3 = $file_name4;
+              } else {
+                $thumb3 = "default";
+              }
+              if($file_size5 > 0){
+                $thumb4 = $file_name5;
+              } else {
+                $thumb4 = "default";
+              }
               
              $query = "INSERT INTO listings (title, frontwidth, rearwidth, size, brand, studpattern1, studpattern2, frontoffset, rearoffset, description, price, ownerID, ownerPhone, ownerEmail, ownerLocation, swaps, mainImage, thumb1, thumb2, thumb3, thumb4) VALUES ('{$title}', '{$frontwidth}', '{$rearwidth}', '{$size}', '{$brand}', '{$studpattern1}', '{$studpattern2}', '{$frontoffset}', '{$rearoffset}', '{$description}', '{$price}', '{$ownerID}', '{$ownerPhone}', '{$ownerEmail}', '{$ownerLocation}', '{$swaps}', '{$mainImage}', '{$thumb1}', '{$thumb2}', '{$thumb3}', '{$thumb4}')";
         

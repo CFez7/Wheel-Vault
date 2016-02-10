@@ -42,6 +42,7 @@
     #box-description {
         height: 150px;
         margin-top: 15px;
+        width: 250px;
     }
 
     #price {
