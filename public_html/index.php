@@ -9,10 +9,11 @@
             <div class="log"> 
                 
                 <!-- If session username is set, display welcome, logout. If not show log in. -->
-                <p style="display:inline;position:absolute;left:250px;top:5px;text-align:center">
+                <p class="sessionMessage">
                     <?php if(isset($_SESSION["message"])) {
-                    echo ucfirst($_SESSION["message"]);}
-                ?>
+                        echo ucfirst($_SESSION["message"]);}
+                    ?>
+                </p>
                 <?php if(isset($_SESSION["name"])) { ?>
                     <?php include '../includes/logged-in-nav.php'; ?>
                 <?php } else { ?>

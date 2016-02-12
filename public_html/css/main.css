@@ -60,7 +60,7 @@ body {
         padding: 0;
         width: 70px;
         cursor: pointer;
-        font: bold 14px 'Josefin Slab', sans-serif;
+        font: bold 14px 'helvetica', sans-serif;
         color: #fff;
         margin-right: 10px;
 }
@@ -76,13 +76,21 @@ body {
         padding: 0;
         width: 70px;
         cursor: pointer;
-        font: bold 14px 'Josefin Slab', sans-serif;
+        font: bold 14px 'helvetica', sans-serif;
         color: #fff;
         margin-right: 10px;
 }
 
 .red-button:hover {
     background-color: red;
+}
+
+.sessionMessage {
+    display:inline;
+    position:absolute;
+    left:250px;
+    top:5px;
+    text-align:center
 }
 
 .sortbar {
@@ -189,7 +197,7 @@ body {
 }
 
 p {
-    font-family: 'Josefin Slab', sans-serif;
+    font-family: sans-serif;
     color: white;
     font-size: 18px;
     font-weight: 300;

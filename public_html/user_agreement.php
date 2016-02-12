@@ -9,9 +9,11 @@
             <div class="log"> 
                 
                 <!-- If session username is set, display welcome, logout. If not show log in. -->
-                <p style="display:inline;position:absolute;right:300px;top:5px;text-align:center">                 <?php if(isset($_SESSION["message"])) {
-                    echo ucfirst($_SESSION["message"]);}
-                ?>
+                <p class="sessionMessage">                 
+                    <?php if(isset($_SESSION["message"])) {
+                        echo ucfirst($_SESSION["message"]);}
+                    ?>
+                </p>
                 <?php if(isset($_SESSION["username"])) { ?>
                     <?php include '../includes/logged-in-nav.php'; ?>
                 <?php } else { ?>
@@ -23,7 +25,9 @@
                 
                 <h1 style="margin:0; text-align:center">User Agreement!</h1>
                 
-                <p></p>
+                <p>
+                
+                </p>
                 
             </div>
             

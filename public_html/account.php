@@ -7,8 +7,8 @@
                 <?php include '../includes/nav.php'; ?>
             </div>
             <div class="log"> 
-                <p style="display:inline;position:absolute;left:250px;top:5px;text-align:center">
-                        <?php echo ucfirst($_SESSION["message"]); ?>
+                <p class="sessionMessage">
+                        <?php echo ucfirst($_SESSION["accountmessage"]); ?>
                 </p>
                 <!-- If session username is set, display welcome, logout. If not show log in. -->
                 <?php if(isset($_SESSION["name"])) { ?>
@@ -18,8 +18,8 @@
                 <?php } ?>
             </div>
             
-            <div class="box-background">
-                <div id="noedit">
+            <div class="box-background"> 
+                <div id="noedit"> 
                 <?php if(!isset($_SESSION["name"])) { ?> 
                     <p style="text-align:center">Please log in to view account details.</p>
                 <?php }else{ ?>

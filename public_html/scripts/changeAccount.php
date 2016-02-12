@@ -12,9 +12,19 @@
         $upassword = $_POST["upassword"];
         $userID = $_SESSION["userID"];
     } else {
-        $_SESSION["message"] = "Error.";  
+        $_SESSION["accountmessage"] = "Error.";  
         header("Location: ../account.php");
     }
+?>
+<?php
+        if(empty($_POST['changeemail'])) {
+            $_SESSION['accountmessage'] = "Email field cannot be left empty!";
+            header("Location: ../account.php");
+        } else {
+        if(empty($_POST['changename'])) {
+                $_SESSION['accountmessage'] = "Name field cannot be left empty!";
+                header("Location: ../account.php");
+        } else { 
 ?>
 <?php
        if($_SESSION["upassword"] == $upassword) {
@@ -29,13 +39,15 @@
             $_SESSION["phone"] = $phone;
             $_SESSION["location"] = $location;
 
-            $_SESSION["message"] = "Account Updated!";
+            $_SESSION["accountmessage"] = "Account Updated!";
             header("Location: ../account.php");
            
        } else {
-           $_SESSION["message"] = "Wrong password entered!";  
+           $_SESSION["accountmessage"] = "Wrong password entered!";  
            header("Location: ../account.php");
        }
+     }
+    }
 ?>
 <?php 
     if(isset($_POST["addpost"])) {

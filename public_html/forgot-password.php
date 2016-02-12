@@ -9,22 +9,24 @@
             <div class="log"> 
                 
                 <!-- If session username is set, display welcome, logout. If not show log in. -->
-                <p style="display:inline;position:absolute;right:300px;top:5px;text-align:center">                 <?php if(isset($_SESSION["message"])) {
-                    echo ucfirst($_SESSION["message"]);}
-                ?>
-                <?php if(isset($_SESSION["username"])) { ?>
-                    <div class="logged-in">
-                        <p>Welcome back <?php echo ucfirst($_SESSION["name"]); ?>!  <a href="../includes/logout.php"><button class="logoutin-button">Logout</button></a></p>
-                    </div>
-                    <?php } else { ?>
-                            <?php include '../includes/login-nav.php'; ?>
-                    <?php } ?>
+                <p class="sessionMessage">                 
+                    <?php if(isset($_SESSION["message"])) {
+                        echo ucfirst($_SESSION["message"]);}
+                    ?>
+                </p>
+                    <?php if(isset($_SESSION["username"])) { ?>
+                        <div class="logged-in">
+                            <p>Welcome back <?php echo ucfirst($_SESSION["name"]); ?>!  <a href="../includes/logout.php"><button class="logoutin-button">Logout</button></a></p>
+                        </div>
+                        <?php } else { ?>
+                                <?php include '../includes/login-nav.php'; ?>
+                        <?php } ?>
             </div>
-            
+
             <div class="box-background">
-                
+
                 <h1 style="margin:0; text-align:center">Forgotten Password</h1>
-                
+
                 <table style="width:100%">
                     <tr>
                         <td style="text-align:center;">
@@ -44,7 +46,7 @@
                         </td>
                     </tr>
                 </table>
-                
+
             </div>
         </div>
         <?php
