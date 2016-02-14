@@ -88,9 +88,9 @@
                     <p>Are you sure you want to delete your account perminantly?</p>
                     <form action="scripts/deleteaccount.php" method="post">
                         <input name="deletePass" type="password" placeholder="Confirm Password" size="35" style="margin-bottom:10px"><br>
-                        <button class="blue-button" id="cancelDelete" style="width:100px">Cancel</button>
                         <input class="red-button" name="confirmDelete" style="width:100px; text-align:center" type="submit" value="DELETE">
                     </form>
+                    <button class="blue-button" id="cancelDelete" style="width:100px; position:relative; top:-30px; left:150px">Cancel</button>
                 </div>
             </div>
         <?php } ?>

@@ -4,25 +4,25 @@
 ?>
 <?php 
         
-      $listingID = $_POST["listingID"];
+      $accountID = $_SESSION["userID"];
          
 ?>
 <?php
        if($_SESSION["upassword"] == $_POST["deletePass"]) {
            
-        $query = "DELETE FROM listings WHERE id = '{$listingID}' ";
+        $query = "DELETE FROM users WHERE id = '{$accountID}' ";
            
         $result = mysqli_query($connection, $query); 
 
         session_start ();
         session_destroy ();
     
-        $_SESSION["message"] = "Post deleted!";
+        $_SESSION["accountmessage"] = "Account Deleted";
         header("Location: ../index.php");
            
        } else {
-           $_SESSION["message"] = "Password did not match!";  
-           header("Location: ../index.php");
+           $_SESSION["accountmessage"] = "Password did not match!";  
+           header("Location: ../account.php");
        }
 ?>
 <?php 
