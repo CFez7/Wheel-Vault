@@ -19,7 +19,7 @@
                             <p>Welcome back <?php echo ucfirst($_SESSION["name"]); ?>!  <a href="../includes/logout.php"><button class="logoutin-button">Logout</button></a></p>
                         </div>
                         <?php } else { ?>
-                                <?php include '../includes/login-nav.php'; ?>
+                                <?php include '../includes/login-nav.php'; ?> 
                         <?php } ?>
             </div>
 

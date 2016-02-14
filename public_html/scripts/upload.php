@@ -85,7 +85,7 @@
         
     if(isset($_FILES['photo'])){
           $errors = array();
-          $file_name = $ownerID."-".$title."-1";
+          $file_name = $ownerID."-".$title."-1".$file_ext;
           $file_size =$_FILES['photo']['size'];
           $file_tmp =$_FILES['photo']['tmp_name'];
           $file_type=$_FILES['photo']['type'];

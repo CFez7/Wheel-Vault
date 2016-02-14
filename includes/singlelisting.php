@@ -1,14 +1,20 @@
 <div id="singleListing">
     <h1 style="margin:0px 0px 10px 15px; font-family: 'Candal', sans-serif;"><?php echo ucwords($row["title"]); ?></h1>
-    <a href="index.php"><button id="back" type="button" style="float:right; position:relative; left:-10px; top:-45px; clear: both;">BACK</button></a>
+    <a href="index.php">
+        <button id="back" type="button" style="float:right; position:relative; left:-10px; top:-45px; clear: both;">
+            BACK
+        </button>
+    </a>
     <?php
 
         if($_SESSION['userID'] != $row['ownerID']) { ?>
             
        <?php } else { ?>
-            <a href="listing.php?id=<?php echo $row["id"]; ?>">
-                <button style="float:right; position:relative; left:-120px; top:-74px; clear: both;" id="view" type="button">EDIT</button>
-        </a>
+                <a href="editlisting.php?id=<?php echo $row["id"]; ?>">
+                    <button style="float:right; position:relative; left:-120px; top:-74px; clear: both;" id="view" type="button">
+                        EDIT
+                    </button>
+                </a>
         <?php } ?>
     
     <div id="gallery">
@@ -30,7 +36,7 @@
             <font color="red">|</font> <?php echo ucfirst($row["brand"]); ?> 
             <font color="red">|</font> <?php echo ucfirst($row["frontwidth"]);?>j x <?php echo ucfirst($row["rearwidth"]);?>j
             <font color="red">|</font> ET<?php echo $row["frontoffset"]; ?> x <?php echo $row["rearoffset"]; ?>
-            <font color="red">|</font> <?php echo $row["studpattern1"]; ?>x<?php echo $row["studpattern2"]; ?>
+            <font color="red">|</font> <?php echo $row["studpattern1"]; ?> x <?php echo $row["studpattern2"]; ?>
             </p>
         </div>
         <div id="description">
