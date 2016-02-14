@@ -1,21 +1,34 @@
+<div id="deletepost" class="popUpBg">
+    <div id="deleteAccountContent">
+        <h1>Listing Deletion</h1>
+        <p>Are you sure you want to delete this listing perminantly?</p>
+        <form action="scripts/deletePost.php" method="post">
+            <input name="deletePass" type="password" placeholder="Confirm Password" size="35" style="margin-bottom:10px"><br>
+            <button class="blue-button" id="cancelDelete" style="width:100px">Cancel</button>
+            <input class="red-button" name="confirmDelete" style="width:100px; text-align:center" type="submit" value="DELETE">
+        </form>
+    </div>
+</div>
+
 <div>
-    <h3><?php echo $_SESSION["editPostMessage"] ?></h3>
     <h1 style="margin:0px 0px 10px 15px; font-family: 'Candal', sans-serif;">
         Edit Post "<?php echo $row["title"]; ?>"
     </h1>
-    <a href="index.php"><button id="back" type="button" style="float:right; position:relative; left:-10px; top:-45px; clear: both;">BACK</button></a>
+    <button id="deletePostBttn" class="red-button" style="background-color:darkred;width:130px;float:right; position:relative; left:-10px; top:-45px; clear: both;">
+        DELETE POST
+    </button>
     <?php
 
         if($_SESSION['userID'] != $row['ownerID']) { ?>
             
        <?php } else { ?>
             <a href="listing.php?id=<?php echo $row["id"]; ?>">
-                <button style="float:right; position:relative; left:-120px; top:-74px; clear: both;" id="view" type="button">
+                <button style="float:right; position:relative; left:-160px; top:-74px; clear: both;" id="view" type="button">
                     CANCEL
                 </button>
             </a>
         <?php } ?>
-    
+        <h3><?php echo $_SESSION["editPostMessage"] ?></h3>
         <table style="width: 100%">
             <form enctype="multipart/form-data" action="scripts/editlistingdetails.php" method="post">
                 <input hidden="hidden" name="listingID" value="<?php echo $row["id"]?>">

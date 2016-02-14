@@ -51,3 +51,13 @@ $( "#cancelDelete" ).click(function() {
 });
 
 ////////////////////////////////////////////
+
+$( "#deletePostBttn" ).click(function() {
+  $( "#deletepost" ).fadeToggle( "slow" );
+});
+
+$( "#cancelPostDelete" ).click(function() {
+  $( "#deletepost" ).fadeToggle( "slow" );
+});
+
+////////////////////////////////////////////
