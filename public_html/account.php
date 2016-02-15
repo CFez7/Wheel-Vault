@@ -1,4 +1,8 @@
-<?php include_once("../includes/header.php"); ?>
+<?php 
+    include_once("../includes/header.php");
+    $_SESSION["uploadMessage"] = "";
+    $_SESSION["message"] = "";
+?>
 <body class="ibg"> <!-- gives this body class ibg (to stop background slideshow) -->
 
         <div class="container">

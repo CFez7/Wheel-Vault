@@ -86,10 +86,10 @@
     if(isset($_FILES['photo'])){
           $errors = array();
           $file_name = $ownerID."-".$title."-1".$file_ext;
-          $file_size =$_FILES['photo']['size'];
-          $file_tmp =$_FILES['photo']['tmp_name'];
-          $file_type=$_FILES['photo']['type'];
-          $file_ext=strtolower(end(explode('.',$_FILES['photo']['name'])));
+          $file_size = $_FILES['photo']['size'];
+          $file_tmp = $_FILES['photo']['tmp_name'];
+          $file_type = $_FILES['photo']['type'];
+          $file_ext = strtolower(end(explode('.',$_FILES['photo']['name'])));
 
           $extensions= array("jpeg","jpg","png");
 
@@ -97,14 +97,14 @@
              $_SESSION["uploadMessage"] ="File type for image 1 not allowed, please choose a JPEG or PNG file.";
              header("Location: ../addpost.php");
           }
-
+        
           if($file_size > 2097152){
              $_SESSION["uploadMessage"] ='File size must be smaller than 2 MB';
              header("Location: ../addpost.php");
           }
 
           if(empty($errors)==true){
-             move_uploaded_file($file_tmp,"../images/listings/".$file_name);
+             move_uploaded_file($file_tmp,"../../includes/listings/".$file_name);
               
               /////// IMAGE 2 ///////
               
@@ -124,7 +124,7 @@
                  header("Location: ../addpost.php");
               }
 
-                move_uploaded_file($file_tmp2,"../images/listings/".$file_name2);
+                move_uploaded_file($file_tmp2,"../../includes/listings/".$file_name2);
               
                /////// IMAGE 3 ///////
               
@@ -144,7 +144,7 @@
                  header("Location: ../addpost.php");
               }
 
-                move_uploaded_file($file_tmp3,"../images/listings/".$file_name3);
+                move_uploaded_file($file_tmp3,"../../includes/listings/".$file_name3);
               
               /////// IMAGE 4 ///////
               
@@ -164,7 +164,7 @@
                  header("Location: ../addpost.php");
               }
 
-                move_uploaded_file($file_tmp4,"../images/listings/".$file_name4);
+                move_uploaded_file($file_tmp4,"../../includes/listings/".$file_name4);
               
               /////// IMAGE 5 ///////
               
@@ -184,7 +184,7 @@
                  header("Location: ../addpost.php");
               }
 
-                move_uploaded_file($file_tmp5,"../images/listings/".$file_name5);
+                move_uploaded_file($file_tmp5,"../../includes/listings/".$file_name5);
               
               ////////////////////////
               
@@ -219,7 +219,7 @@
                   $_SESSION["uploadMessage"] = "Listing Sucessfully Uploaded!";
                   header("Location: ../addpost.php");
               }else{
-                  $_SESSION["uploadMessage"] = "Error!";
+                  $_SESSION["uploadMessage"] = "Something went wrong... Sorry!";
                   header("Location: ../addpost.php");
            }
           }
@@ -232,7 +232,5 @@
    }
 ?>
 <?php 
-    if(isset($_POST["addpost"])) {
         mysqli_close($connection);
-    }
 ?>

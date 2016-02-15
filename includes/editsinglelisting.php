@@ -34,7 +34,7 @@
                 </button>
             </a>
         <?php } ?>
-        <h3><?php echo $_SESSION["editPostMessage"] ?></h3>
+        <h3><?php echo $_SESSION["editPostMessage"]; ?></h3>
         <table style="width: 100%">
             <form enctype="multipart/form-data" action="scripts/editlistingdetails.php" method="post">
                 <input hidden="hidden" name="listingID" value="<?php echo $row["id"]?>">

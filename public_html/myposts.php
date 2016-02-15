@@ -1,4 +1,9 @@
-<?php include_once("../includes/header.php"); ?>
+<?php 
+    include_once("../includes/header.php"); 
+    $_SESSION["uploadMessage"] = "";
+    $_SESSION["accountmessage"] = "";
+    $_SESSION["message"] = "";
+?>
 <body class="ibg"> <!-- gives this body class ibg (to stop background slideshow) -->
 
     <div class="container">
@@ -7,9 +12,6 @@
             <?php include '../includes/nav.php'; ?>
         </div>
         <div class="log"> 
-            <p class="sessionMessage">
-                    <?php echo ucfirst($_SESSION["message"]); ?>
-            </p>
             <!-- If session username is set, display welcome, logout. If not show log in. -->
             <?php if(isset($_SESSION["name"])) { ?>
                 <?php include '../includes/logged-in-nav.php'; ?>

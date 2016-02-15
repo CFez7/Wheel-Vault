@@ -9,7 +9,7 @@
             <font color="red">|</font> ET<?php echo $row["frontoffset"]; ?> x <?php echo $row["rearoffset"]; ?>
             <font color="red">|</font> <?php echo $row["studpattern1"]; ?>x<?php echo $row["studpattern2"]; ?>
         </p>
-    <div style="float:left; width:200px; height:200px; display:inline-block; margin-top:-25px; margin-right:10px; background: url('images/listings/<?php echo $row["mainImage"]?>') 50% 50% no-repeat; background-size: cover; background-repeat:no-repeat">
+    <div style="float:left; width:200px; height:200px; display:inline-block; margin-top:-25px; margin-right:10px; background: url('../includes/listings/<?php echo $row["mainImage"]?>') 50% 50% no-repeat; background-size: cover; background-repeat:no-repeat">
     </div>
     <div id="box-info">
         <p id="box-description"><?php echo ucfirst($row["description"]); ?></p>

@@ -19,31 +19,31 @@
            
         if($mainImage !== "default") {
             
-            unlink('../images/listings/'.$mainImage);
+            unlink('../../includes/listings/'.$mainImage);
             
         }
            
         if($thumb1 !== "default") {
             
-            unlink('../images/listings/'.$thumb1);
+            unlink('../../includes/listings/'.$thumb1);
             
         }
            
         if($thumb2 !== "default") {
             
-            unlink('../images/listings/'.$thumb2);
+            unlink('../../includes/listings/'.$thumb2);
             
         }
            
         if($thumb3 !== "default") {
             
-            unlink('../images/listings/'.$thumb3);
+            unlink('../../includes/listings/'.$thumb3);
             
         }
            
         if($thumb4 !== "default") {
             
-            unlink('../images/listings/'.$thumb4);
+            unlink('../../includes/listings/'.$thumb4);
             
         }
 

@@ -15,7 +15,7 @@
         if(isset($_FILES['photo'])){
               $errors = array();
               $file_name = $ownerID."-".$title."-1".$file_ext;
-              $file_size =$_FILES['photo']['size'];
+              $file_size = getimagesize($_FILES['photo']);
               $file_tmp =$_FILES['photo']['tmp_name'];
               $file_type=$_FILES['photo']['type'];
               $file_ext=strtolower(end(explode('.',$_FILES['photo']['name'])));

@@ -1,3 +1,7 @@
+<?php 
+    $_SESSION["editPostMessage"] = "";
+    $_SESSION["message"] = ""; 
+?>
 <div id="singleListing">
     <h1 style="margin:0px 0px 10px 15px; font-family: 'Candal', sans-serif;"><?php echo ucwords($row["title"]); ?></h1>
     <a href="index.php">
@@ -19,14 +23,14 @@
     
     <div id="gallery">
         <div style="height:300px">
-            <img id="mainimage" src="images/listings/<?php echo $row["mainImage"];?>"><br>
+            <img id="mainimage" src="../includes/listings/<?php echo $row["mainImage"];?>"><br>
         </div>
         
-        <img src="images/listings/<?php echo $row["mainImage"]?>" class="thumbnail">
-        <img src="images/listings/<?php echo $row["thumb1"]?>" class="thumbnail">
-        <img src="images/listings/<?php echo $row["thumb2"]?>" class="thumbnail">
-        <img src="images/listings/<?php echo $row["thumb3"]?>" class="thumbnail">
-        <img src="images/listings/<?php echo $row["thumb4"]?>" class="thumbnail">
+        <img src="../includes/listings/<?php echo $row["mainImage"]?>" class="thumbnail">
+        <img src="../includes/listings/<?php echo $row["thumb1"]?>" class="thumbnail">
+        <img src="../includes/listings/<?php echo $row["thumb2"]?>" class="thumbnail">
+        <img src="../includes/listings/<?php echo $row["thumb3"]?>" class="thumbnail">
+        <img src="../includes/listings/<?php echo $row["thumb4"]?>" class="thumbnail">
         <span class="stretch"></span>
     </div>
     <div id="info">
