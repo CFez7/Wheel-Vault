@@ -3,8 +3,14 @@
         <h1>Listing Deletion</h1>
         <p>Are you sure you want to delete this listing perminantly?</p>
         <form action="scripts/deletePost.php" method="post">
+            <input hidden="hidden" name="listingID" value="<?php echo $row["id"]; ?>">
+            <input hidden="hidden" name="mainImage" value="<?php echo $row["mainImage"]; ?>">
+            <input hidden="hidden" name="thumb1" value="<?php echo $row["thumb1"]; ?>">
+            <input hidden="hidden" name="thumb2" value="<?php echo $row["thumb2"]; ?>">
+            <input hidden="hidden" name="thumb3" value="<?php echo $row["thumb3"]; ?>">
+            <input hidden="hidden" name="thumb4" value="<?php echo $row["thumb4"]; ?>">
             <input name="deletePass" type="password" placeholder="Confirm Password" size="35" style="margin-bottom:10px"><br>
-            <button class="blue-button" id="cancelDelete" style="width:100px">Cancel</button>
+            <button type="button" class="blue-button" id="cancelPostDelete" style="width:100px">Cancel</button>
             <input class="red-button" name="confirmDelete" style="width:100px; text-align:center" type="submit" value="DELETE">
         </form>
     </div>

@@ -87,10 +87,24 @@
                     <h1>Account Deletion</h1>
                     <p>Are you sure you want to delete your account perminantly?</p>
                     <form action="scripts/deleteaccount.php" method="post">
-                        <input name="deletePass" type="password" placeholder="Confirm Password" size="35" style="margin-bottom:10px"><br>
-                        <input class="red-button" name="confirmDelete" style="width:100px; text-align:center" type="submit" value="DELETE">
+                        <table style="width:100%">
+                            <tr>
+                                <td colspan="2">
+                                    <input name="deletePass" type="password" placeholder="Confirm Password" size="35">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:right">
+                                    <button type="button" class="blue-button" id="cancelDelete" style="width:100px">
+                                        Cancel
+                                    </button>
+                                </td>
+                                <td  style="text-align:left">
+                                    <input class="red-button" name="confirmDelete" style="width:100px; text-align:center" type="submit" value="DELETE">
+                                </td>
+                            </tr>
+                        </table>
                     </form>
-                    <button class="blue-button" id="cancelDelete" style="width:100px; position:relative; top:-30px; left:150px">Cancel</button>
                 </div>
             </div>
         <?php } ?>

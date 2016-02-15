@@ -4,29 +4,61 @@
 ?>
 <?php 
         
-      $accountID = $_SESSION["userID"];
+    $listingID = $_POST["listingID"];
+    $mainImage = $_POST["mainImage"];
+    $thumb1 = $_POST["thumb1"];
+    $thumb2 = $_POST["thumb2"];
+    $thumb3 = $_POST["thumb3"]; 
+    $thumb4 = $_POST["thumb4"];
          
 ?>
 <?php
        if($_SESSION["upassword"] == $_POST["deletePass"]) {
            
-        $query = "DELETE FROM users WHERE id = '{$accountID}' ";
+        $query = "DELETE FROM listings WHERE id = '{$listingID}' ";
+           
+        if($mainImage !== "default") {
+            
+            unlink('../images/listings/'.$mainImage);
+            
+        }
+           
+        if($thumb1 !== "default") {
+            
+            unlink('../images/listings/'.$thumb1);
+            
+        }
+           
+        if($thumb2 !== "default") {
+            
+            unlink('../images/listings/'.$thumb2);
+            
+        }
+           
+        if($thumb3 !== "default") {
+            
+            unlink('../images/listings/'.$thumb3);
+            
+        }
+           
+        if($thumb4 !== "default") {
+            
+            unlink('../images/listings/'.$thumb4);
+            
+        }
+
            
         $result = mysqli_query($connection, $query); 
 
-        session_start ();
-        session_destroy ();
     
-        $_SESSION["message"] = "Account Deleted";
+        $_SESSION["message"] = "Post Deleted!";
         header("Location: ../index.php");
            
        } else {
-           $_SESSION["message"] = "Password did not match!";  
-           header("Location: ../account.php");
+           $_SESSION["message"] = "Something went wrong!";  
+           header("Location: ../index.php");
        }
 ?>
 <?php 
-    if(isset($_POST["addpost"])) {
         mysqli_close($connection);
-    }
 ?>
