@@ -14,14 +14,14 @@
                         echo ucfirst($_SESSION["message"]);}
                     ?>
                 </p>
-                <?php if(isset($_SESSION["username"])) { ?>
+                <?php if(isset($_SESSION["name"])) { ?>
                     <?php include '../includes/logged-in-nav.php'; ?>
                 <?php } else { ?>
                         <?php include '../includes/login-nav.php'; ?>
                 <?php } ?>
             </div>
             
-            <div id="reg-background">
+            <div class="box-background">
                 
                 <h1 style="margin:0; text-align:center">User Agreement!</h1>
                 

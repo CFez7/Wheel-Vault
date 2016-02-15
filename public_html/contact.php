@@ -23,9 +23,11 @@
             
             <div class="box-background">
                 
-                <h1 style="margin:0; text-align:center">Privacy Policy!</h1>
+                <h1 style="margin:0; text-align:center">Contact Us Here!</h1>
                 
-                <p></p>
+                <p>
+                
+                </p>
                 
             </div>
             

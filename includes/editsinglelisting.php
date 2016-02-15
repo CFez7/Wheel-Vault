@@ -188,11 +188,11 @@
                         </tr>
                     </table>
                 
-                    <img src="images/listings/<?php echo $row["mainImage"]?>" class="thumbnail">
-                    <img src="images/listings/<?php echo $row["thumb1"]?>" class="thumbnail">
-                    <img src="images/listings/<?php echo $row["thumb2"]?>" class="thumbnail">
-                    <img src="images/listings/<?php echo $row["thumb3"]?>" class="thumbnail">
-                    <img src="images/listings/<?php echo $row["thumb4"]?>" class="thumbnail">
+                    <img src="../includes/listings/<?php echo $row["mainImage"]?>" class="thumbnail">
+                    <img src="../includes/listings/<?php echo $row["thumb1"]?>" class="thumbnail">
+                    <img src="../includes/listings/<?php echo $row["thumb2"]?>" class="thumbnail">
+                    <img src="../includes/listings/<?php echo $row["thumb3"]?>" class="thumbnail">
+                    <img src="../includes/listings/<?php echo $row["thumb4"]?>" class="thumbnail">
                     <span class="stretch"></span>
 
                     <input class="form-button" name="changeimages" type="submit" value="Change Images">
