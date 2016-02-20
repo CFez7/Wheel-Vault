@@ -97,7 +97,7 @@
             <!-- contents div to show all listings using box.php -->
             <div class="content">
                 <?php 
-              //  include '../includes/advert.php';
+              // include '../includes/advert.php';
                 
                 while($row = mysqli_fetch_assoc($result)) {
                     

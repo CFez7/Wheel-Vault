@@ -33,4 +33,11 @@
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
+        <?php 
+            /* start autoload
+            require_once 'vendor/autoload.php';
+
+            // setup propel
+            require_once 'config.php'; */
+        ?>
     </head>

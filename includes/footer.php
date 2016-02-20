@@ -3,7 +3,7 @@
             <table style="width:100vw">
                 <tr>
                     <td style="width:33%">
-                        <p style="font-size:12px">Copyright © 2015</p>
+                        <p style="font-size:12px">Copyright © 2016</p>
                     </td>
                     <td style="width:33%">
                         <p style="font-size:12px; font-weight:bold">

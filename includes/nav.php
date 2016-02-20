@@ -7,10 +7,5 @@
                 Home
             </button>
         </a>
-        <a href="contact.php">
-            <button style="display:inline-block" class="blue-button">
-                Contact
-            </button>
-        </a>
     </p>
 </div>
