@@ -72,9 +72,7 @@
                             <strong><p style="margin:0px">Stud Pattern:</p></strong>
                         </td>
                         <td style="width:65%">
-                            <input name="studpattern1" placeholder="5" type="text" size="16" style="margin:10px 0px;width:110px">
-                            <strong><p style="display:inline-block;margin:0px">x</p></strong>
-                            <input name="studpattern2" placeholder="100" type="text" size="16" style="display:inline-block;margin:10px 0px;width:112px">
+                            <input name="studpattern" placeholder="5x100" type="text" size="35" style="margin:10px 0px;">
                         </td>
                     </tr>
                     <tr>
@@ -171,7 +169,8 @@
                 <input style="margin-top:30px" class="form-button" name="addpost" type="submit" value="Post Advert">
                 </form>
 
-            <p style="font-size:10px; font-weight:bold; text-align:center"> By posting this advert you agree to the <a href="posting_policy.php" target="_blank">Wheel Vault Posting Agreement</a></p>
+            <p style="font-size:12px; text-align:center"> By posting this advert you agree to the <a href="posting_policy.php" target="_blank"><strong>Wheel Vault Posting Agreement</strong></a>.</p>
+            <p style="font-size:12px; text-align:center"> <strong>NOTE:</strong> Upload of image will be skipped if it is incompatible.</a></p>
             </div>
         </div>
     <?php } ?>

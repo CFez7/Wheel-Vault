@@ -23,11 +23,20 @@
             
             <div class="box-background">
                 
-                <h1 style="margin:0; text-align:center">Contact Us Here!</h1>
+                <h1 style="margin:0; text-align:center">Contact Us</h1>
                 
-                <p>
-                
-                </p>
+                <div class="contact" id="contact">
+                    <h3 style="font-weight:500">We would love to hear from you.</h3><br>
+                    <input type="hidden" name="_config" value="default" />
+                    <FORM METHOD="POST" ACTION="../cgi-bin/TFmail.pl">
+                        <input class="formtextbox" type="text" name="name" placeholder="Name"><br>
+                        <input class="formtextbox" type="text" name="email" placeholder="Email"><br>
+                        <input class="formtextbox" type="text" name="subject" placeholder="Subject"><br>
+                        <input class="formtextbox" type="text" name="company" placeholder="Company Name"><br>
+                        <textarea class="formtextbox" type="textarea" name="message" placeholder="Message" style="height:200px;resize:none"></textarea><br>
+                        <input style="" type="submit" name="submit" value="Send Message">
+                    </form>
+                </div>
                 
             </div>
             

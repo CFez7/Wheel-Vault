@@ -1,7 +1,7 @@
 <?php
-if(isset($_GET["id"])) {
-  $listingID = $_GET["id"];
-} 
+    if(isset($_GET["id"])) {
+      $listingID = $_GET["id"];
+    } 
 ?>
 <?php include_once("../includes/header.php"); ?>
 <body class="ibg"> <!-- gives this body class ibg (to stop background slideshow) -->
@@ -24,7 +24,7 @@ if(isset($_GET["id"])) {
             
             <?php 
 
-                $query = "SELECT * FROM listings WHERE id='{$listingID}'";
+                $query = "SELECT * FROM listings WHERE listing_id='{$listingID}'";
                 $result = mysqli_query($connection, $query); 
                 if(!$result) {
                     die("Query Error");  

@@ -3,16 +3,22 @@
             <table style="width:100vw">
                 <tr>
                     <td style="width:33%">
-                        <p style="font-size:12px">Copyright © 2016</p>
+                        <p style="font-size:12px; line-height:30px; margin:0px">Copyright © 2016</p>
                     </td>
                     <td style="width:33%">
-                        <p style="font-size:12px; font-weight:bold">
-                            <a href="../public_html/user_agreement.php" style="text-decoration:none"> terms of use </a>/<a href="../public_html/privacy_policy.php" style="text-decoration:none"> privacy policy </a>
+                        <p style="font-size:12px; font-weight:bold; line-height:30px; margin:0px">
+                            <a href="../public_html/user_agreement.php" style="text-decoration:none"> terms of use </a>/<a href="../public_html/privacy_policy.php" style="text-decoration:none"> privacy policy </a>/<a href="../public_html/contact.php" style="text-decoration:none"> contact us </a>
                         </p>
                     </td>
                     <td style="width:33%">
-                        <a href="http://www.connorferry.me.uk" target="_blank" style="text-decoration:none">
-                            <p style="font-size:12px">By Connor Ferry</p>
+                        <a href="https://www.facebook.com/wheelvault" target="_blank" style="text-decoration:none">
+                            <img src="../public_html/images/social/facebook.svg" class="socialicon" style="width:20px; margin-10px; display:inline-block">
+                        </a>
+                        <a href="https://twitter.com/WheelVault" target="_blank" style="text-decoration:none">
+                            <img src="../public_html/images/social/twitter.svg" class="socialicon" style="width:20px; margin-10px; display:inline-block">
+                        </a>
+                        <a href="https://www.instagram.com/wheelvault/" target="_blank" style="text-decoration:none">
+                            <img src="../public_html/images/social/instagram.svg" class="socialicon" style="width:20px; margin-10px; display:inline-block">
                         </a>
                     </td>
                 </tr>

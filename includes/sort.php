@@ -14,15 +14,18 @@
             <option value="bbs">BBS</option>
             <option value="3sdm">3SDM</option>
             <option value="oem">OEM</option>
+            <option value="oem">BMW</option>
             <option value="rotiform">Rotiform</option>
         </select>
         <select name="width">
             <option value="">Width</option>
-            <option value="7.5j">7.5j</option>
-            <option value="8j">8j</option>
-            <option value="8.5j">8.5j</option>
-            <option value="9j">9j</option>
-            <option value="9.5j">9.5j</option>
+            <option value="6.5">6.5j</option>
+            <option value="7">7j</option>
+            <option value="7.5">7.5j</option>
+            <option value="8">8j</option>
+            <option value="8.5">8.5j</option>
+            <option value="9">9j</option>
+            <option value="9.5">9.5j</option>
         </select>
         <select name="offset">
             <option value="">Offset</option>

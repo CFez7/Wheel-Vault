@@ -30,8 +30,10 @@
             
             <!-- query to display all current listings -->
             <?php 
-
-                $query = "SELECT * FROM listings";
+                        
+                $loadMore = $_SESSION["loadeditems"];
+                        
+                $query = "SELECT * FROM listings LIMIT 16";
                 $result = mysqli_query($connection, $query); 
 
                 if(!$result) {
@@ -46,44 +48,50 @@
                     
                     $query = "SELECT * FROM listings";
                     
-                    if(!empty($_POST["location"])) {
-                        $query .= " WHERE location='{$_POST["location"]}'";
+                    if(!empty($_POST["size"])) {
+                        $query .= " WHERE size='{$_POST["size"]}'";
                     }
                     
-                    if(!empty($_POST["sleeps"])) {
-                        if(!empty($_POST["location"])) {
-                            $query .= " AND sleeps='{$_POST["sleeps"]}'";
+                    if(!empty($_POST["brand"])) {
+                        if(!empty($_POST["size"])) {
+                            $query .= " AND brand='{$_POST["brand"]}'";
                         } else {
-                            $query .= " WHERE sleeps='{$_POST["sleeps"]}'";
+                            $query .= " WHERE brand='{$_POST["brand"]}'";
                         }    
                     }
                     
-                    if(!empty($_POST["type"])) {
+                    if(!empty($_POST["width"])) {
                         
-                        if(empty($_POST["sleeps"]) && empty($_POST["location"])) {
-                            $query .= " WHERE type='{$_POST["type"]}'";
-                        } 
+                        if(empty($_POST["size"]) && empty($_POST["brand"])) {
+                            $query .= " WHERE rearwidth='{$_POST["width"]}' OR frontwidth='{$_POST["width"]}'";
+                        } else {
+                            if(!empty($_POST["size"]) OR !empty($_POST["brand"])) {
+                                $query .= " AND rearwidth='{$_POST["width"]}' OR frontwidth='{$_POST["width"]}'";
+                            }
+                        }
                     }
                     
-                    if(!empty($_POST["type"])) {
+                    
+                    if(!empty($_POST["offset"])) {
                         
-                        if(!empty($_POST["sleeps"]) && !empty($_POST["location"])) {
-                            $query .= " AND type='{$_POST["type"]}'";
-                        } 
+                        if(empty($_POST["size"]) && empty($_POST["brand"]) && empty($_POST["width"])) {
+                            $query .= " WHERE frontoffset='{$_POST["offset"]}' OR rearoffset='{$_POST["offset"]}'";
+                        } else {
+                            if(!empty($_POST["size"]) OR !empty($_POST["brand"]) OR !empty($_POST["width"])) {
+                                $query .= " AND frontoffset='{$_POST["offset"]}' rearoffset='{$_POST["offset"]}'";
+                            }
+                        }
                     }
                     
-                    if(empty($_POST["location"])) {
+                    if(!empty($_POST["studpattern"])) {
                         
-                        if(!empty($_POST["sleeps"]) && !empty($_POST["type"])) {
-                            $query .= " AND type='{$_POST["type"]}'";
-                        } 
-                    }
-                    
-                    if(!empty($_POST["location"])) {
-                        
-                        if(empty($_POST["sleeps"]) && !empty($_POST["type"])) {
-                            $query .= " AND type='{$_POST["type"]}'";
-                        } 
+                        if(empty($_POST["size"]) && empty($_POST["brand"]) && empty($_POST["width"]) && empty($_POST["offset"])) {
+                            $query .= " WHERE studpattern='{$_POST["studpattern"]}'";
+                        } else {
+                            if(!empty($_POST["size"]) OR !empty($_POST["brand"]) OR !empty($_POST["width"]) OR !empty($_POST["offset"])) {
+                                $query .= " AND studpattern='{$_POST["studpattern"]}'";
+                            }
+                        }
                     }
                                     
                     $result = mysqli_query($connection, $query);

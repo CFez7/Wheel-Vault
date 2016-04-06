@@ -26,22 +26,26 @@
                     <p style="text-align:center">Please log in to view account posts.</p>
                 <?php }else{ ?>
                 <?php 
-    
-                    echo $_SESSION["userID"];
-    
+        
                     $ownerID = $_SESSION["userID"];
                             
-                    $query = "SELECT * FROM listings WHERE ownerID = '{$ownerID}'";
-    
+                    $query = "SELECT * FROM listings WHERE user_id = '{$ownerID}'";
+                    
                     $result = mysqli_query($connection, $query);
                     
-                    while($row = mysqli_fetch_assoc($result)) {
-                    
-                    include '../includes/box.php';  
-                    
-                }
+                    if(mysqli_num_rows($result)>0){
 
-            ?>
+                        while($row = mysqli_fetch_array($result)) {
+
+                            include '../includes/box.php';  
+
+                        }
+                    } else { 
+                ?>
+                        <p style="text-align:center">You currently have no posts.</p>
+                <?php    
+                    }
+                ?>
             </div>
         </div>
 

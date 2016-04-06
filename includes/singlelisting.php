@@ -11,10 +11,10 @@
     </a>
     <?php
 
-        if($_SESSION['userID'] != $row['ownerID']) { ?>
+        if($_SESSION['userID'] != $row['user_id']) { ?>
             
        <?php } else { ?>
-                <a href="editlisting.php?id=<?php echo $row["id"]; ?>">
+                <a href="editlisting.php?id=<?php echo $row["listing_id"]; ?>">
                     <button style="float:right; position:relative; left:-120px; top:-74px; clear: both;" id="view" type="button">
                         EDIT
                     </button>
@@ -27,10 +27,18 @@
         </div>
         
         <img src="../includes/listings/<?php echo $row["mainImage"]?>" class="thumbnail">
-        <img src="../includes/listings/<?php echo $row["thumb1"]?>" class="thumbnail">
-        <img src="../includes/listings/<?php echo $row["thumb2"]?>" class="thumbnail">
-        <img src="../includes/listings/<?php echo $row["thumb3"]?>" class="thumbnail">
-        <img src="../includes/listings/<?php echo $row["thumb4"]?>" class="thumbnail">
+        <?php if($row["thumb1"] != "default") { ?>
+            <img src="../includes/listings/<?php echo $row["thumb1"]?>" class="thumbnail">
+        <?php } ?>
+        <?php if($row["thumb2"] != "default") { ?>
+            <img src="../includes/listings/<?php echo $row["thumb2"]?>" class="thumbnail">
+        <?php } ?>
+        <?php if($row["thumb3"] != "default") { ?>
+            <img src="../includes/listings/<?php echo $row["thumb3"]?>" class="thumbnail">
+        <?php } ?>
+        <?php if($row["thumb4"] != "default") { ?>
+            <img src="../includes/listings/<?php echo $row["thumb4"]?>" class="thumbnail">
+        <?php } ?>
         <span class="stretch"></span>
     </div>
     <div id="info">
@@ -40,7 +48,7 @@
             <font color="red">|</font> <?php echo ucfirst($row["brand"]); ?> 
             <font color="red">|</font> <?php echo ucfirst($row["frontwidth"]);?>j x <?php echo ucfirst($row["rearwidth"]);?>j
             <font color="red">|</font> ET<?php echo $row["frontoffset"]; ?> x <?php echo $row["rearoffset"]; ?>
-            <font color="red">|</font> <?php echo $row["studpattern1"]; ?> x <?php echo $row["studpattern2"]; ?>
+            <font color="red">|</font> <?php echo $row["studpattern"]; ?>
             </p>
         </div>
         <div id="description">
@@ -67,9 +75,8 @@
         </div>
         <?php } ?>
         
-        <div id="price" style="margin-left:50px; width:300px">
-            <h1 style="text-align:center">£<?php echo $row["price"];?>
-            <br>
+            <h2 style="text-align:center;width:400px">£<?php echo $row["price"];?> | 
+            
             <?php
                 if($row['swaps'] == 'Yes') {
                     echo "Or To Swap";
@@ -77,7 +84,6 @@
                     echo "No Swaps";
                 }
             ?>
-            </h1> 
-        </div>
+            </h2> 
     </div>
 </div>

@@ -7,7 +7,7 @@
             <font color="red">|</font> <?php echo ucfirst($row["brand"]); ?> 
             <font color="red">|</font> <?php echo ucfirst($row["frontwidth"]);?>j x <?php echo ucfirst($row["rearwidth"]);?>j
             <font color="red">|</font> ET<?php echo $row["frontoffset"]; ?> x <?php echo $row["rearoffset"]; ?>
-            <font color="red">|</font> <?php echo $row["studpattern1"]; ?>x<?php echo $row["studpattern2"]; ?>
+            <font color="red">|</font> <?php echo $row["studpattern"]; ?>
         </p>
     <div style="float:left; width:200px; height:200px; display:inline-block; margin-top:-25px; margin-right:10px; background: url('../includes/listings/<?php echo $row["mainImage"]?>') 50% 50% no-repeat; background-size: cover; background-repeat:no-repeat">
     </div>
@@ -16,7 +16,7 @@
     </div>
     <div id="price">
         <h1 style="margin:0px;">£<?php echo $row["price"]; ?></h1>
-        <a href="listing.php?id=<?php echo $row["id"]; ?>">
+        <a href="listing.php?id=<?php echo $row["listing_id"]; ?>">
             <button id="view" type="button">VIEW</button>
         </a>
     </div>

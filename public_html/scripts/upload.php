@@ -10,8 +10,7 @@
         $rearwidth = $_POST["rearwidth"];
         $size = $_POST["size"];
         $brand = $_POST["brand"];
-        $studpattern1 = $_POST["studpattern1"];
-        $studpattern2 = $_POST["studpattern2"];
+        $studpattern = $_POST["studpattern"];
         $frontoffset = $_POST["frontoffset"];
         $rearoffset = $_POST["rearoffset"];
         $description = $_POST["description"];
@@ -25,7 +24,6 @@
         $size = ""; 
         $brand = ""; 
         $studpattern1 = ""; 
-        $studpattern2 = ""; 
         $frontoffset = "";
         $rearoffset = ""; 
         $description = "";
@@ -68,7 +66,7 @@
                 $_SESSION['uploadMessage'] = "Brand field empty!";
                 header("Location: ../addpost.php");
             } else {
-        if(empty($_POST['studpattern1'])) {
+        if(empty($_POST['studpattern'])) {
                 $_SESSION['uploadMessage'] = "Stud Pattern fields empty!";
                 header("Location: ../addpost.php");
             } else {
@@ -98,8 +96,8 @@
              header("Location: ../addpost.php");
           }
         
-          if($file_size > 2097152){
-             $_SESSION["uploadMessage"] ='File size must be smaller than 2 MB';
+          if($file_size > 3097152){
+             $_SESSION["uploadMessage"] ='File size must be smaller than 3 MB';
              header("Location: ../addpost.php");
           }
 
@@ -119,12 +117,12 @@
                  header("Location: ../addpost.php");
               }
 
-              if($file_size2 > 2097152){
+              if($file_size2 > 3097152){
                  $_SESSION["uploadMessage"] ='File 2 size must be smaller than 2 MB';
                  header("Location: ../addpost.php");
+              } else {
+                  move_uploaded_file($file_tmp2,"../../includes/listings/".$file_name2);
               }
-
-                move_uploaded_file($file_tmp2,"../../includes/listings/".$file_name2);
               
                /////// IMAGE 3 ///////
               
@@ -139,12 +137,12 @@
                  header("Location: ../addpost.php");
               }
 
-              if($file_size3 > 2097152){
-                 $_SESSION["uploadMessage"] ='File 3 size must be smaller than 2 MB';
+              if($file_size3 > 3097152){
+                 $_SESSION["uploadMessage"] ='File 3 size must be smaller than 3 MB';
                  header("Location: ../addpost.php");
+              } else {
+                 move_uploaded_file($file_tmp3,"../../includes/listings/".$file_name3);
               }
-
-                move_uploaded_file($file_tmp3,"../../includes/listings/".$file_name3);
               
               /////// IMAGE 4 ///////
               
@@ -159,12 +157,12 @@
                  header("Location: ../addpost.php");
               }
               
-              if($file_size4 > 2097152){
-                 $_SESSION["uploadMessage"] ='File 4 size must be smaller than 2 MB';
+              if($file_size4 > 3097152){
+                 $_SESSION["uploadMessage"] ='File 4 size must be smaller than 3 MB';
                  header("Location: ../addpost.php");
-              }
-
+              } else {
                 move_uploaded_file($file_tmp4,"../../includes/listings/".$file_name4);
+              }
               
               /////// IMAGE 5 ///////
               
@@ -179,12 +177,12 @@
                  header("Location: ../addpost.php");
               }
 
-              if($file_size5 > 2097152){
-                 $_SESSION["uploadMessage"] ='File 5 size must be smaller than 2 MB';
+              if($file_size5 > 3097152){
+                 $_SESSION["uploadMessage"] ='File 5 size must be smaller than 3 MB';
                  header("Location: ../addpost.php");
-              }
-
+              } else {
                 move_uploaded_file($file_tmp5,"../../includes/listings/".$file_name5);
+              }
               
               ////////////////////////
               
@@ -211,7 +209,7 @@
                 $thumb4 = "default";
               }
               
-             $query = "INSERT INTO listings (title, frontwidth, rearwidth, size, brand, studpattern1, studpattern2, frontoffset, rearoffset, description, price, ownerID, ownerPhone, ownerEmail, ownerLocation, swaps, mainImage, thumb1, thumb2, thumb3, thumb4) VALUES ('{$title}', '{$frontwidth}', '{$rearwidth}', '{$size}', '{$brand}', '{$studpattern1}', '{$studpattern2}', '{$frontoffset}', '{$rearoffset}', '{$description}', '{$price}', '{$ownerID}', '{$ownerPhone}', '{$ownerEmail}', '{$ownerLocation}', '{$swaps}', '{$mainImage}', '{$thumb1}', '{$thumb2}', '{$thumb3}', '{$thumb4}')";
+             $query = "INSERT INTO listings (title, frontwidth, rearwidth, size, brand, studpattern, frontoffset, rearoffset, description, price, ownerID, ownerPhone, ownerEmail, ownerLocation, swaps, mainImage, thumb1, thumb2, thumb3, thumb4) VALUES ('{$title}', '{$frontwidth}', '{$rearwidth}', '{$size}', '{$brand}', '{$studpattern}', '{$frontoffset}', '{$rearoffset}', '{$description}', '{$price}', '{$ownerID}', '{$ownerPhone}', '{$ownerEmail}', '{$ownerLocation}', '{$swaps}', '{$mainImage}', '{$thumb1}', '{$thumb2}', '{$thumb3}', '{$thumb4}')";
         
              $result = mysqli_query($connection, $query); 
               

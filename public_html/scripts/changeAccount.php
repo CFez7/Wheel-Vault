@@ -27,7 +27,7 @@
         } else { 
 ?>
 <?php
-       if($_SESSION["upassword"] == $upassword) {
+       if(crypt($upassword, $_SESSION["upassword"]) == $_SESSION["upassword"]) { 
            
             $query = "UPDATE users SET name='{$name}', email='{$email}', phone='{$phone}', location='{$location}' WHERE id='{$userID}'";
 

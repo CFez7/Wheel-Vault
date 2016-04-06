@@ -72,13 +72,11 @@
                         <div class="form-text">
                             <strong><p style="display:inline-block;margin:10px 0px">Current Password:</p></strong><br>
                             <strong><p style="display:inline-block;margin:10px 0px">New Password:</p></strong><br>
-                            <strong><p style="display:inline-block;margin:10px 0px">Confirm Password:</p></strong><br>
                         </div>
                         <div class="form-boxes">
                             <form action="scripts/changepassword.php" method="post" style="margin-bottom:50px">
                                 <input name="upassword" type="password" size="35" style="margin:10px 0px">
                                 <input name="newpassword" type="password" size="35" style="margin:10px 0px">
-                                <input name="passcheck" type="password" size="35" style="margin:10px 0px">
                                 <input style="left:50px" class="form-button" name="changePassword" type="submit" value="CHANGE">
                             </form>
                         </div>
@@ -94,7 +92,7 @@
                         <table style="width:100%">
                             <tr>
                                 <td colspan="2">
-                                    <input name="deletePass" type="password" placeholder="Confirm Password" size="35">
+                                    <input name="deletepass" type="password" placeholder="Confirm Password" size="35">
                                 </td>
                             </tr>
                             <tr>

@@ -3,22 +3,34 @@
     require_once("../../includes/connect.php");
 ?>
 <?php 
-        
-      $accountID = $_SESSION["userID"];
-         
+    if(isset($_POST["confirmDelete"])) {
+        $accountID = $_SESSION["userID"];
+        $deletepass = $_POST["deletepass"];
+        $password = $_SESSION["upassword"];
+    } else {
+        $_SESSION["accountmessage"] = "Error.";  
+        header("Location: ../account.php");
+    }
 ?>
 <?php
-       if($_SESSION["upassword"] == $_POST["deletePass"]) {
-           
-        $query = "DELETE FROM users WHERE id = '{$accountID}' ";
-           
-        $result = mysqli_query($connection, $query); 
-
-        session_start ();
-        session_destroy ();
-    
-        $_SESSION["accountmessage"] = "Account Deleted";
-        header("Location: ../index.php");
+        if(crypt($deletepass, $password) == $password) {
+            
+            $tables = array("listings","users");
+            foreach($tables as $table) {
+                
+                $query = "DELETE FROM $table WHERE user_id='{$accountID}'";
+                
+                $result = mysqli_query($connection, $query); 
+            }
+                       
+            if($result) {
+                session_start ();
+                session_destroy ();
+                header("Location: ../index.php");
+            } else {
+                $_SESSION["accountmessage"] = "Something went wrong!";  
+                header("Location: ../account.php");
+            }
            
        } else {
            $_SESSION["accountmessage"] = "Password did not match!";  

@@ -36,16 +36,19 @@
             if($_POST['upassword'] != $_POST['checkpass']) {
                 $_SESSION['regmessage'] = "Passwords do not match!"; 
             } else {
-            // if all fields are filled out it inserts them into the users table.
-            $query = "INSERT INTO users (name, email, phone, location, upassword) VALUES ('{$name}', '{$email}', '{$phone}', '{$location}','{$upassword}')";
-        
-        $result = mysqli_query($connection, $query); 
+                
+                $password_hash = crypt($upassword);
+
+                    // if all fields are filled out it inserts them into the users table.
+                $query = "INSERT INTO users (name, email, phone, location, upassword) VALUES ('{$name}', '{$email}', '{$phone}', '{$location}','{$password_hash}')";
+
+                $result = mysqli_query($connection, $query); 
 
         // if there are results (data was sent) display they are registered. if not say it went wrong.
-        if($result) {
-            $_SESSION["regmessage"] = "You are now a registered user!";   
-        } else {
-            $_SESSION["regmessage"] = "Whoops! Something went wrong!"; 
+            if($result) {
+                $_SESSION["regmessage"] = "You are now a registered user!";   
+            } else {
+                $_SESSION["regmessage"] = "Whoops! Something went wrong!"; 
          }
         }
        }
@@ -57,7 +60,5 @@
     header("Location: ../register.php");
 ?>
 <?php 
-    if(isset($_POST["addpost"])) {
         mysqli_close($connection);
-    }
 ?>

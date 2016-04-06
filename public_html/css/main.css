@@ -8,6 +8,7 @@ body {
     background-color: black;
 }
 
+/* background image from: https://unsplash.com/photos/xXalKDWoZSo - by Adel Ben */
 .ibg {
     background-image: url(../images/background.jpg);
     background-size: cover;
@@ -15,10 +16,6 @@ body {
     max-width: 100%;
 
 }
-
-#background_cycler {padding:0;margin:0;height:100%;width:100%;position:absolute;top:0;left:0;z-index:-1}
-#background_cycler img {position:absolute;left:0;top:0;height:100%;width:100%;z-index:1}
-#background_cycler img.active {z-index:3}
 
 .container {
     min-height: 100%;
@@ -50,7 +47,7 @@ body {
 }
 
 .blue-button {
-        background-color: dodgerblue;
+        background-color: forestgreen;
         background-image: linear-gradient(top, #e97171, #d14545);
         border-radius: 4px;
         text-shadow: 0 1px 0 rgba(0,0,0,.5);
@@ -83,6 +80,14 @@ body {
 
 .red-button:hover {
     background-color: red;
+}
+
+.socialicon {
+    transition: 300ms ease;
+}
+
+.socialicon:hover {
+    transform: scale(1.3);
 }
 
 .sessionMessage {
@@ -131,7 +136,7 @@ body {
     margin: auto;
     border-radius: 10px;
     height: 100%;
-    max-width: 800px;  
+    width: 80vw;  
     padding: 15px;
     overflow-y: scroll;
     margin-bottom: 15px;
@@ -196,6 +201,17 @@ body {
     display: inline-block;
 }
 
+.contact {
+    text-align: center;
+}
+
+.formtextbox {
+    border: none;
+    width: 80%;
+    height: 20px;
+    margin-bottom: 10px;
+}   
+
 p {
     font-family: sans-serif;
     color: white;
@@ -205,6 +221,7 @@ p {
 
 a:link {
     color: yellow;
+    text-decoration: none;
 }
 
 a:visited {
@@ -216,7 +233,7 @@ a:hover {
 }
 
 h1, h2, h3 {
-    font-family: 'Alegreya Sans', sans-serif;
+    font-family: sans-serif;
     color: white;
 }
 

@@ -11,7 +11,6 @@
         <link href="css/singleListing.css" rel="stylesheet" type='text/css'>
         <link href='css/box.css' rel='stylesheet' type='text/css'>
         <link href='css/account-del.css' rel='stylesheet' type='text/css'>
-        <link href='css/type.css' rel='stylesheet' type='text/css'>
         <link href='css/nav.css' rel='stylesheet' type='text/css'>
         <link href='css/login-nav.css' rel='stylesheet' type='text/css'>
         <link href='css/uploadcheckers.css' rel='stylesheet' type='text/css'>
@@ -34,10 +33,10 @@
         <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
         <?php 
-            /* start autoload
-            require_once 'vendor/autoload.php';
+            // start autoload
+            require_once '../vendor/autoload.php';
 
             // setup propel
-            require_once 'config.php'; */
+            require_once '../generated-conf/config.php'; 
         ?>
     </head>

@@ -9,14 +9,14 @@ nav ul {
     }
 
 nav #login-trigger {
-    background-color: dodgerblue;
+    background-color: forestgreen;
     background-image: linear-gradient(top, #e97171, #d14545);
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     border-radius: 4px;
     text-shadow: 0 1px 0 rgba(0,0,0,.5);
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;    
-    border: 1px solid white;
+    border: none;
     padding: 5px;
     width: 100px;
     text-decoration: none; 
@@ -74,7 +74,7 @@ nav #login-content {
     /*--------------------*/
 
 #login #submit {    
-    background-color: dodgerblue;
+    background-color: forestgreen;
     background-image: linear-gradient(top, white, #d14545);
     text-shadow: 0 1px 0 rgba(0,0,0,.5);
     border: none;

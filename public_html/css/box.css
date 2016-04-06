@@ -6,14 +6,14 @@
         padding: 10px;
         padding-top: 40px;
         margin-bottom: 10px;
-        font-family: 'Alegreya Sans', serif;
+        font-family: sans-serif;
         overflow: hidden;
         display: inline-block;
         text-align: left;
     }
     
     #box h1 {
-        font-family: 'Candal', sans-serif;
+        font-family: sans-serif;
     }
     
     #advertbox {
@@ -54,7 +54,8 @@
     }
     
     #price h1 {
-        font-family: 'Alegreya Sans', sans-serif;
+        font-family: sans-serif;
+        font-size: 30px;
     }
     
     #view {
@@ -81,7 +82,7 @@
         padding: 10px;
         padding-top: 40px;
         margin-bottom: 10px;
-        font-family: 'Alegreya Sans', serif;
+        font-family: sans-serif;
         overflow: hidden;
         text-align: left;
         position: relative;

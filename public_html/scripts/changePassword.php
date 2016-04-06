@@ -8,8 +8,8 @@
         
         $upassword = $_POST["upassword"];
         $newpassword = $_POST["newpassword"];
-        $passcheck = $_POST["passcheck"];
         $userID = $_SESSION["userID"];
+        $currentpass = $_SESSION["upassword"];
         
     } else {
         $_SESSION["message"] = "Error.";  
@@ -18,36 +18,38 @@
 ?>
 <?php
 
-     if($newpassword != "") {
-         
-        if($newpassword == $passcheck) {
-            
-           if($_SESSION["upassword"] == $upassword) {
+    if($newpassword == "" or $upassword == "") {
+        $_SESSION["accountmessage"] = "Please fill all fields!";  
+        header("Location: ../account.php");
+    } else {
 
-                $query = "UPDATE users SET upassword='{$newpassword}' WHERE id='{$userID}'";
+        if(crypt($upassword, $_SESSION["upassword"]) == $_SESSION["upassword"]) { 
 
-                $result = mysqli_query($connection, $query); 
+            $password_hash = crypt($newpassword);
 
-                $_SESSION["upassword"] = $newpassword;
+            $query = "UPDATE users SET upassword='{$password_hash}' WHERE user_id='{$userID}'";
 
-                $_SESSION["message"] = "Password Updated!";
+            $result = mysqli_query($connection, $query); 
+
+           if($result) {
+
+                $_SESSION["upassword"] = $hash_password;
+
+                $_SESSION["accountmessage"] = "Password updated!";
                 header("Location: ../account.php");
 
-           } else {
-               $_SESSION["message"] = "Wrong current password";  
-               header("Location: ../account.php");
+            } else {
+
+                $_SESSION["accountmessage"] = "Something went wrong!";
+                header("Location: ../account.php");
            }
+
         } else {
-           $_SESSION["message"] = "Passwords did not match!";  
-           header("Location: ../account.php");
+            $_SESSION["accountmessage"] = "Wrong password entered!";  
+            header("Location: ../account.php");
         }
-     } else {
-         $_SESSION["message"] = "No password entered";  
-         header("Location: ../account.php");
-     }
+    }
 ?>
 <?php 
-    if(isset($_POST["addpost"])) {
         mysqli_close($connection);
-    }
 ?>

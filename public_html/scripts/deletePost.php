@@ -10,12 +10,13 @@
     $thumb2 = $_POST["thumb2"];
     $thumb3 = $_POST["thumb3"]; 
     $thumb4 = $_POST["thumb4"];
+    $enteredpass = $_POST["deletePass"];
          
 ?>
 <?php
-       if($_SESSION["upassword"] == $_POST["deletePass"]) {
+       if(crypt($enteredpass, $_SESSION["upassword"]) == $_SESSION["upassword"]) { 
            
-        $query = "DELETE FROM listings WHERE id = '{$listingID}' ";
+        $query = "DELETE FROM listings WHERE listing_id = '{$listingID}' ";
            
         if($mainImage !== "default") {
             
@@ -55,8 +56,8 @@
         header("Location: ../index.php");
            
        } else {
-           $_SESSION["message"] = "Something went wrong!";  
-           header("Location: ../index.php");
+           $_SESSION["message"] = "Password did not match!";  
+           header("Location: ../myposts.php");
        }
 ?>
 <?php 

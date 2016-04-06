@@ -3,7 +3,7 @@
   <ul>
     <li id="login">
       <a id="login-trigger" href="#">
-        Log in / Register <span>▼</span>
+        Log in / Register
       </a>
     <!-- this div is shown when login/register button is clicked -->
       <div id="login-content">

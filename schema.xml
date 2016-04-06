@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<database name="default" defaultIdMethod="native" defaultPhpNamingMethod="underscore">
+  <table name="listings" idMethod="native" phpName="Listings">
+    <column name="id" phpName="Id" type="INTEGER" size="10" sqlType="int(10) unsigned" autoIncrement="true" required="true"/>
+    <column name="title" phpName="Title" type="VARCHAR" size="20" required="true"/>
+    <column name="frontwidth" phpName="Frontwidth" type="INTEGER" size="3" required="true"/>
+    <column name="rearwidth" phpName="Rearwidth" type="INTEGER" size="3" required="true"/>
+    <column name="size" phpName="Size" type="INTEGER" size="3" required="true"/>
+    <column name="brand" phpName="Brand" type="VARCHAR" size="15" required="true"/>
+    <column name="studpattern1" phpName="Studpattern1" type="INTEGER" size="5" required="true"/>
+    <column name="studpattern2" phpName="Studpattern2" type="INTEGER" size="5" required="true"/>
+    <column name="frontoffset" phpName="Frontoffset" type="INTEGER" size="3" required="true"/>
+    <column name="rearoffset" phpName="Rearoffset" type="INTEGER" size="3" required="true"/>
+    <column name="description" phpName="Description" type="VARCHAR" size="150" required="true"/>
+    <column name="price" phpName="Price" type="INTEGER" size="5" required="true"/>
+    <column name="swaps" phpName="Swaps" type="VARCHAR" size="5" required="true"/>
+    <column name="ownerID" phpName="Ownerid" type="INTEGER" required="true"/>
+    <column name="ownerLocation" phpName="Ownerlocation" type="VARCHAR" size="30" required="true"/>
+    <column name="ownerEmail" phpName="Owneremail" type="VARCHAR" size="50" required="true"/>
+    <column name="ownerPhone" phpName="Ownerphone" type="VARCHAR" size="11" required="true"/>
+    <column name="time" phpName="Time" type="TIMESTAMP" required="true" defaultExpr="CURRENT_TIMESTAMP"/>
+    <column name="mainImage" phpName="Mainimage" type="VARCHAR" size="25" defaultValue="default.png"/>
+    <column name="thumb1" phpName="Thumb1" type="VARCHAR" size="25" defaultValue="default.png"/>
+    <column name="thumb2" phpName="Thumb2" type="VARCHAR" size="25" defaultValue="default.png"/>
+    <column name="thumb3" phpName="Thumb3" type="VARCHAR" size="25" defaultValue="default.png"/>
+    <column name="thumb4" phpName="Thumb4" type="VARCHAR" size="25" defaultValue="default.png"/>
+    <unique name="id">
+      <unique-column name="id"/>
+    </unique>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="users" idMethod="native" phpName="Users">
+    <column name="id" phpName="Id" type="INTEGER" size="10" sqlType="int(10) unsigned" autoIncrement="true" required="true"/>
+    <column name="name" phpName="Name" type="VARCHAR" size="20" required="true"/>
+    <column name="email" phpName="Email" type="VARCHAR" size="30" required="true"/>
+    <column name="phone" phpName="Phone" type="VARCHAR" size="13" required="true"/>
+    <column name="location" phpName="Location" type="VARCHAR" size="25" required="true"/>
+    <column name="upassword" phpName="Upassword" type="VARCHAR" size="61" required="true"/>
+    <unique name="email">
+      <unique-column name="email"/>
+    </unique>
+    <unique name="id">
+      <unique-column name="id"/>
+    </unique>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+</database>
