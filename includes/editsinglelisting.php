@@ -3,7 +3,7 @@
         <h1>Listing Deletion</h1>
         <p>Are you sure you want to delete this listing perminantly?</p>
         <form action="scripts/deletePost.php" method="post">
-            <input hidden="hidden" name="listingID" value="<?php echo $row["id"]; ?>">
+            <input hidden="hidden" name="listingID" value="<?php echo $row["listing_id"]; ?>">
             <input hidden="hidden" name="mainImage" value="<?php echo $row["mainImage"]; ?>">
             <input hidden="hidden" name="thumb1" value="<?php echo $row["thumb1"]; ?>">
             <input hidden="hidden" name="thumb2" value="<?php echo $row["thumb2"]; ?>">
@@ -37,7 +37,13 @@
         <h3><?php echo $_SESSION["editPostMessage"]; ?></h3>
         <table style="width: 100%">
             <form enctype="multipart/form-data" action="scripts/editlistingdetails.php" method="post">
-                <input hidden="hidden" name="listingID" value="<?php echo $row["id"]?>">
+                <input hidden="hidden" name="currenttitle" value="<?php echo $row["title"]; ?>">
+                <input hidden="hidden" name="mainImage" value="<?php echo $row["mainImage"]; ?>">
+                <input hidden="hidden" name="thumb1" value="<?php echo $row["thumb1"]; ?>">
+                <input hidden="hidden" name="thumb2" value="<?php echo $row["thumb2"]; ?>">
+                <input hidden="hidden" name="thumb3" value="<?php echo $row["thumb3"]; ?>">
+                <input hidden="hidden" name="thumb4" value="<?php echo $row["thumb4"]; ?>">
+                <input hidden="hidden" name="listingID" value="<?php echo $row["listing_id"]; ?>">
                 <tr>
                     <td style="width:35%; text-align:right">
                         <strong><p style="margin:0px"><font color="red">*</font>Title:</p></strong>
@@ -77,9 +83,7 @@
                         <strong><p style="margin:0px">Stud Pattern:</p></strong>
                     </td>
                     <td style="width:65%">
-                        <input name="studpattern1" value="<?php echo $row["studpattern1"]; ?>" type="text" size="16" style="margin:10px 0px;width:110px">
-                        <strong><p style="display:inline-block;margin:0px">x</p></strong>
-                        <input name="studpattern2" value="<?php echo $row["studpattern2"]; ?>" type="text" size="16" style="display:inline-block;margin:10px 0px;width:112px">
+                        <input name="studpattern" value="<?php echo $row["studpattern"]; ?>" type="text" size="16" style="margin:10px 0px;width:110px">
                     </td>
                 </tr>
                 <tr>
@@ -158,7 +162,8 @@
         
             <div id="gallery" style="width:100%">
                 <form enctype="multipart/form-data" action="scripts/editlistingimages.php" method="post">
-                    <input hidden="hidden" name="listingID" value="<?php echo $row["id"]?>">
+                    <input hidden="hidden" name="title" value="<?php echo $row["title"]?>">
+                    <input hidden="hidden" name="listingID" value="<?php echo $row["listing_id"]?>">
                     <table style="margin-bottom:50px">
                         <tr>
                             <td>
@@ -183,12 +188,38 @@
                             </td>
                         </tr>
                     </table>
-                
-                    <img src="../includes/listings/<?php echo $row["mainImage"]?>" class="thumbnail">
-                    <img src="../includes/listings/<?php echo $row["thumb1"]?>" class="thumbnail">
-                    <img src="../includes/listings/<?php echo $row["thumb2"]?>" class="thumbnail">
-                    <img src="../includes/listings/<?php echo $row["thumb3"]?>" class="thumbnail">
-                    <img src="../includes/listings/<?php echo $row["thumb4"]?>" class="thumbnail">
+                    <?php 
+                        $thumb1 = $row["thumb1"];
+                        $thumb2 = $row["thumb2"];
+                        $thumb3 = $row["thumb3"];
+                        $thumb4 = $row["thumb4"];
+                    ?>
+                        <img src="../includes/listings/<?php echo $row["mainImage"]?>" class="thumbnail">
+                    
+                    <?php if(file_exists("../includes/listings/".$thumb1)) { ?>
+                        <img src="../includes/listings/<?php echo $row["thumb1"]?>" class="thumbnail">
+                    <?php } else { ?>
+                        <img src="../includes/listings/default" class="thumbnail">
+                    <?php } ?>
+                    
+                    <?php if(file_exists("../includes/listings/".$thumb2)) { ?>
+                        <img src="../includes/listings/<?php echo $row["thumb2"]?>" class="thumbnail">
+                    <?php } else { ?>
+                        <img src="../includes/listings/default" class="thumbnail">
+                    <?php } ?>
+                    
+                    <?php if(file_exists("../includes/listings/".$thumb3)) { ?>
+                        <img src="../includes/listings/<?php echo $row["thumb3"]?>" class="thumbnail">
+                    <?php } else { ?>
+                        <img src="../includes/listings/default" class="thumbnail">
+                    <?php } ?>
+                    
+                    <?php if(file_exists("../includes/listings/".$thumb4)) { ?>
+                        <img src="../includes/listings/<?php echo $row["thumb4"]?>" class="thumbnail">
+                    <?php } else { ?>
+                        <img src="../includes/listings/default" class="thumbnail">
+                    <?php } ?>
+
                     <span class="stretch"></span>
 
                     <input class="form-button" name="changeimages" type="submit" value="Change Images">
