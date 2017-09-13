@@ -109,7 +109,7 @@ This is decided by the if statements based on which filters are selected */
             <div class="content">
                 <?php 
                 
-            <!-- Potential for advert support - Currently commented out --> 
+              // Potential for advert support - Currently commented out
               // include '../includes/advert.php';
                 
                 while($row = mysqli_fetch_assoc($result)) {
