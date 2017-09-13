@@ -12,7 +12,7 @@
             </div>
             <div class="log"> 
                 
-                <!-- If session username is set, display welcome, logout. If not show log in. -->
+                <!-- If session username is set, display welcome with logout button. If not, show log in button. -->
                 <p class="sessionMessage">
                     <?php if(isset($_SESSION["message"])) {
                         echo ucfirst($_SESSION["message"]);}
@@ -42,7 +42,9 @@
 
             ?>  
             <?php 
-/*php has many if statements so that no matter which filters you choose or leave blank it will always give back the relavent results. Basic query set as 'SELECT * FROM listings' then is adds to this query using .= based on whether it needs to add WHERE or AND to the query. This is decided by the if statements based on which filters are selected */
+/*php has many if statements so that no matter which filters you choose or leave blank it will always give back the relavent results. 
+Basic query set as 'SELECT * FROM listings' then queries are added using .= based on whether it needs to add WHERE or AND to the query. 
+This is decided by the if statements based on which filters are selected */
 
                 if(isset($_POST["filter"])) {
                     
@@ -102,9 +104,12 @@
                 }
             ?>
         
-            <!-- contents div to show all listings using box.php -->
+            <!-- contents div to show all listings using box.php which repeats until all listings are displayed.
+                 Currently no pagination support. -->
             <div class="content">
                 <?php 
+                
+            <!-- Potential for advert support - Currently commented out --> 
               // include '../includes/advert.php';
                 
                 while($row = mysqli_fetch_assoc($result)) {
