@@ -21,7 +21,7 @@ if(isset($_GET["id"])) {
                         <?php include '../includes/login-nav.php'; ?>
                 <?php } ?>
             </div>
-            
+            <!-- Get information from the selected listing ready for edit -->
             <?php 
 
                 $query = "SELECT * FROM listings WHERE id='{$listingID}'";
