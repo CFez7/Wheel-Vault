@@ -1,4 +1,6 @@
+
 <?php
+    // Gets listing ID from URL to filter content.
     if(isset($_GET["id"])) {
       $listingID = $_GET["id"];
     } 
@@ -21,7 +23,7 @@
                         <?php include '../includes/login-nav.php'; ?>
                 <?php } ?>
             </div>
-            
+            <!-- Below query filters content to only retrieve selected listing details. -->
             <?php 
 
                 $query = "SELECT * FROM listings WHERE listing_id='{$listingID}'";
