@@ -19,6 +19,8 @@
             </div>
             
             <div class="box-background">
+                    
+                 <!-- If user gains access to page whilst logged in, page cannot be used until logged out -->
                 <?php if(isset($_SESSION["name"])) { ?>
                     <p style="text-align:center">Please log out to register.</p>
                 <?php }else{ ?>
@@ -31,7 +33,7 @@
                 <div style="text-align:center">
                     <p style="margin-top:0px;">Registering will allow you to add your own adverts to the site!<br>Contact info entered here can be used on the adverts.</p>
                 </div>
-                
+                <!-- contact form to collect registration information - Submits to the registration script -->
                 <form action="scripts/register.php" method="post">
                     <table style="width: 100%">
                         <tr>
