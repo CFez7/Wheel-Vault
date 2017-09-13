@@ -12,18 +12,24 @@
         header("Location: ../account.php");
     }
 ?>
+<!-- *NOTE* This doe remove users listings but NOT the images associated with those listings. This needs to be addressed. -->
 <?php
+
+        // if entered password is correct carry on
         if(crypt($deletepass, $password) == $password) {
             
+            // Gather all listings associated with this user.
             $tables = array("listings","users");
             foreach($tables as $table) {
                 
+                // Set query for deletion of all user listings and users details
                 $query = "DELETE FROM $table WHERE user_id='{$accountID}'";
                 
                 $result = mysqli_query($connection, $query); 
             }
                        
             if($result) {
+                // Destroy session, logging the user out of session
                 session_start ();
                 session_destroy ();
                 header("Location: ../index.php");
