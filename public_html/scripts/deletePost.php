@@ -14,10 +14,14 @@
          
 ?>
 <?php
+
+        // if entered password matches the one in the database, carry on with deletion
+
        if(crypt($enteredpass, $_SESSION["upassword"]) == $_SESSION["upassword"]) { 
-           
+        // Delete listing from database
         $query = "DELETE FROM listings WHERE listing_id = '{$listingID}' ";
            
+         // if images have been set and exist, remove from server
         if($mainImage !== "default") {
             
             unlink('../../includes/listings/'.$mainImage);
