@@ -1,9 +1,10 @@
 <?php
+    // Database and session connection
     require_once("../../includes/session.php");
     require_once("../../includes/connect.php");
 ?>
 <?php
-
+    // Store listingID for later use.
     if(isset($_POST["changeimages"])) {
         $listingID = $_POST["listingID"];
     } else {
@@ -11,27 +12,32 @@
     }
             
                 ///// IMAGE 1 /////
-
+        // If a file has been selected from selector one, carry on.
         if(isset($_FILES['photo'])){
               $errors = array();
+              // Create filename to append later
               $file_name = $ownerID."-".$title."-1".$file_ext;
+              // get image size information
               $file_size = getimagesize($_FILES['photo']);
+              // Get other image details and temp name 
               $file_tmp =$_FILES['photo']['tmp_name'];
               $file_type=$_FILES['photo']['type'];
               $file_ext=strtolower(end(explode('.',$_FILES['photo']['name'])));
-
+              
+              // set array for allowed file extensions.
               $extensions= array("jpeg","jpg","png");
-
+              // Check if extension matches those set above - If fails, cancel submission.
               if(in_array($file_ext,$extensions)=== false) {
                  $_SESSION["editPostMessage"] ="extension not allowed, please choose a JPEG or PNG file.";
                  header("Location: ../editlisting?id=$listingID.php");
               }
-
+              // Check that filesize is less than 2MB, if it is carry on, if not cancel.
               if($file_size > 2097152){
                  $_SESSION["editPostMessage"] ='File size must be smaller than 2 MB';
                  header("Location: ../editlisting?id=$listingID.php");
               }
-
+            
+              // If process above has no errors, carry on to process second image in the same manner as the first and so on.
               if(empty($errors)==true){
                  move_uploaded_file($file_tmp,"../images/listings/".$file_name);
 
@@ -49,7 +55,7 @@
                      $_SESSION["editPostMessage"] ='File 2 size must be smaller than 2 MB';
                      header("Location: ../editlisting?id=$listingID.php");
                   }
-
+                    // Moves uploaded file into server with appended filename.
                     move_uploaded_file($file_tmp2,"../images/listings/".$file_name2);
 
                    /////// IMAGE 3 ///////
@@ -106,6 +112,8 @@
                   ////////////////////////
 
                   $mainImage = $file_name;
+                  
+                  // Check how many of the image selectors have been filled with an image to append filename ready for database update and if one has not, append default.
 
                   if($file_size2 > 0){
                     $thumb1 = $file_name2;
@@ -127,6 +135,8 @@
                   } else {
                     $thumb4 = "default";
                   }
+                  
+                  // Change information relating to the image uploaded in the database
               
                   if(isset($_FILES['photo'])){
             $query = "UPDATE listings SET (mainImage) VALUES ('{$mainImage}')";
@@ -150,6 +160,7 @@
                   
             $result = mysqli_query($connection, $query); 
               
+              // if database update has been successful go back to listing, else display error message.
               if($result) {
                   header("Location: ../listing?id=$listingID.php");
               }else{
