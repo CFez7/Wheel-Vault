@@ -22,12 +22,15 @@
 
         <div class="content">
             <div>
+                <!-- If user gains access to this page without being logged in, the user is prompted to do so -->
                 <?php if(!isset($_SESSION["name"])) { ?>
                     <p style="text-align:center">Please log in to view account posts.</p>
                 <?php }else{ ?>
                 <?php 
         
                     $ownerID = $_SESSION["userID"];
+    
+                    // show all listings that belong to the logged in user
                             
                     $query = "SELECT * FROM listings WHERE user_id = '{$ownerID}'";
                     
@@ -42,6 +45,7 @@
                         }
                     } else { 
                 ?>
+                <!-- if no results are found, tell the user -->
                         <p style="text-align:center">You currently have no posts.</p>
                 <?php    
                     }
