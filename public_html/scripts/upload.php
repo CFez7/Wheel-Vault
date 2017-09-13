@@ -3,7 +3,7 @@
     require_once("../../includes/connect.php");
 ?>
 <?php
-    
+    // Append form values to variables for use later.
     if(isset($_POST["addpost"])) {
         $title = $_POST["title"];
         $frontwidth = $_POST["frontwidth"];
@@ -53,7 +53,7 @@
             $swaps = "No";
         }
 
-     
+     // If any are empty, display error message on the form page.
     if(empty($_POST['title'])) {
                 $_SESSION['uploadMessage'] = "Title field empty!";
                 header("Location: ../addpost.php");
@@ -81,6 +81,7 @@
             
             ///// IMAGE 1 /////
         
+            // See editlistingimages.php comments for image upload process
     if(isset($_FILES['photo'])){
           $errors = array();
           $file_name = $ownerID."-".$title."-1".$file_ext;
@@ -209,10 +210,14 @@
                 $thumb4 = "default";
               }
               
+              // insert all gathered information into database as new item
+              
              $query = "INSERT INTO listings (title, frontwidth, rearwidth, size, brand, studpattern, frontoffset, rearoffset, description, price, ownerID, ownerPhone, ownerEmail, ownerLocation, swaps, mainImage, thumb1, thumb2, thumb3, thumb4) VALUES ('{$title}', '{$frontwidth}', '{$rearwidth}', '{$size}', '{$brand}', '{$studpattern}', '{$frontoffset}', '{$rearoffset}', '{$description}', '{$price}', '{$ownerID}', '{$ownerPhone}', '{$ownerEmail}', '{$ownerLocation}', '{$swaps}', '{$mainImage}', '{$thumb1}', '{$thumb2}', '{$thumb3}', '{$thumb4}')";
         
              $result = mysqli_query($connection, $query); 
               
+              
+              // Display relevant message to user based on if there has been an error or not
               if($result) {
                   $_SESSION["uploadMessage"] = "Listing Sucessfully Uploaded!";
                   header("Location: ../addpost.php");
