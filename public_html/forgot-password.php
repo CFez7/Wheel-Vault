@@ -22,9 +22,11 @@
                                 <?php include '../includes/login-nav.php'; ?> 
                         <?php } ?>
             </div>
+                
+              <!-- *NOTE* forgot password not currently functional! -->
 
             <div class="box-background">
-
+                    
                 <h1 style="margin:0; text-align:center">Forgotten Password</h1>
 
                 <table style="width:100%">
