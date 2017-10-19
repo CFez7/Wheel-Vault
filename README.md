@@ -7,6 +7,9 @@ Wheel-Vault is a personal project of mine and was designed to:
 To view the Live Demo version of this github repo please visit:
 http://connorferry.co.uk/wheelvault/public_html/
 
+Username: guest@me.com 
+Password: pass
+
 ** NOTE ** 
 
 - Propel PHP Framework installed but no code converted to use this framework as of yet.
